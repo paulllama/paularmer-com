@@ -1,0 +1,33 @@
+{{ define "main" }}
+    <div class="header header--home">
+        <div class="header__top">
+            <h1 class="header__top__title">PAUL ARMER</h1>
+        </div>
+        <div class="header__bottom">
+            <span class="header__bottom__text">Software Engineer</span>
+            <span class="header__bottom__text">Front-end Developer</span>
+            <span class="header__bottom__text">UX Designer</span>
+        </div>
+    </div>
+    <div class="home-section">
+        <div class="work-experience">
+            {{ range .Data.Pages }}
+            <div class="work-experience__item">
+                <div class="work-experience__item__sample">
+                    <img src="{{ .URL }}{{ .Params.preview }}" />
+                </div>
+                <div class="work-experience__item__text">
+                    <h3 class="work-experience__item__text__name">{{ .Title }}</h3>
+                    <h4 class="work-experience__item__text__title">{{ .Params.role }}</h4>
+                    <ul class="work-experience__item__text__tags">
+                        {{ range .Params.tags }}
+                        <li class="work-experience__item__text__tags__tag">{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                    <p class="work-experience__item__text__description">{{ .Description }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}

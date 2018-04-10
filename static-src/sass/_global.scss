@@ -1,0 +1,25 @@
+@import "all-includes";
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: $font-family-nomral;
+  color: $color-text;
+  background: darken($color-white, 8%);
+}
+
+* {
+  &, &:before, &:after {
+    box-sizing: inherit;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#main-content {
+  background: white;
+}

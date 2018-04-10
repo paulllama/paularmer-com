@@ -1,0 +1,47 @@
+@import "all-includes";
+
+.personal-projects {
+  @include flexbox();
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+
+  .personal-projects__item {
+    @include styles-for-tablet-or-larger() {
+      width: 50%;
+      padding: 0 1.5rem 1.5rem;
+    }
+    @include styles-for-desktop() {
+      width: 33%;
+    }
+
+    .personal-projects__item__link {
+      @include standard-link();
+      display: block;
+
+      &:hover {
+        .personal-projects__item__img {
+          outline-width: 4px;
+        }
+      }
+    }
+
+    .personal-projects__item__img {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      outline: 0 $color-marigold solid;
+      @include transition-duration(200ms);
+      @include transition-property(outline-width);
+    }
+
+    .personal-projects__item__name {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .personal-projects__item__description {
+      line-height: 1.4;
+    }
+  }
+}

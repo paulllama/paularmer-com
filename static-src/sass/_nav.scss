@@ -1,0 +1,52 @@
+@import "mixins";
+
+.nav {
+  @include flexbox();
+  @include justify-content(space-between);
+  @include align-items(center);
+
+  z-index: 2;
+  background: $color-poppy;
+  width: 100%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  @include wide-content();
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  $logo-font-size: 1.5rem;
+  $logo-width: $logo-font-size * 5;
+
+  .nav__logo {
+    font-size: $logo-font-size;
+    font-family: $font-family-header;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    width: $logo-width;
+  }
+
+  .nav__menu {
+    @include flexbox();
+    @include align-items(center);
+    width: calc(50% - #{$logo-width / 2});
+    @include justify-content(flex-end);
+
+
+    .nav__menu__item {
+      @include transition-duration(150ms);
+      @include transition-property(color);
+      margin-left: 1.25rem;
+      color: white;
+
+      &:hover {
+        color: $color-marigold;
+      }
+
+      &.--icon {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

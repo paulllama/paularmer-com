@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        {{ block "title" . }}
+            {{ .Site.Title }}
+        {{ end }}
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//fonts.googleapis.com/css?family=Fjalla+One|Lato:400,700" rel="stylesheet">
+    <link href="/css/ionicons.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="nav">
+    <a href="/" class="nav__logo">Paul Armer</a>
+    <ul class="nav__menu">
+        <li>
+            <a href="mailto:paul@paularmer.me" class="ion-email nav__menu__item --icon"></a>
+        </li>
+        <li>
+            <a href="http://linkedin.com/in/parmer" target="_blank" class="ion-social-linkedin nav__menu__item --icon"></a>
+        </li>
+        <li>
+            <a href="http://github.com/parmer" target="_blank" class="ion-social-github nav__menu__item --icon"></a>
+        </li>
+    </ul>
+</nav>
+
+<div id="main-content">
+    {{ block "main" . }}
+    <h1>ERROR LOADING PAGE</h1>
+    {{ end }}
+</div>
+
+<footer class="footer">
+    <ul class="footer__social">
+        <li>
+            <a href="mailto:paul@paularmer.me" class="ion-email footer__social__link"></a>
+        </li>
+        <li>
+            <a href="http://linkedin.com/in/parmer" target="_blank" class="ion-social-linkedin footer__social__link"></a>
+        </li>
+        <li>
+            <a href="http://github.com/parmer" target="_blank" class="ion-social-github footer__social__link"></a>
+        </li>
+    </ul>
+    <a href="mailto:paul@paularmer.me" class="footer__email">paul@paularmer.me</a>
+    <div class="footer__copyright">
+        © {{ time.Now.Year }} Paul Armer. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>
