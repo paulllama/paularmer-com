@@ -1,3 +1,5 @@
 static/
 .idea/
 public/
+build/
+node_modules/
