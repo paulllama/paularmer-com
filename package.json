@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {},
   "scripts": {
+		"build": "rm -rf build && mkdir build && cp src/*.css build/ && cp src/*.html build/ && cp -R src/media/ build/media/",
     "deploy": "gh-pages -d build"
   },
   "browserslist": {
