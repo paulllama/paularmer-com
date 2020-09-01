@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #3A2A49;
+  font-family: 'Rubik', sans-serif; }
+
+.text-container {
+  max-width: 32rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  color: #ECDEF9; }
+  @media (min-width: 600px) {
+    .text-container {
+      margin: 9vh auto; } }
+
+img {
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 20px 20px 0 #604768, 19px 19px 0 #604768, 18px 18px 0 #604768, 17px 17px 0 #604768, 16px 16px 0 #604768, 15px 15px 0 #604768, 14px 14px 0 #604768, 13px 13px 0 #604768, 12px 12px 0 #604768, 11px 11px 0 #604768, 10px 10px 0 #604768, 9px 9px 0 #604768, 8px 8px 0 #604768, 7px 7px 0 #604768, 6px 6px 0 #604768, 5px 5px 0 #604768, 4px 4px 0 #604768, 3px 3px 0 #604768, 2px 2px 0 #604768, 1px 1px 0 #604768, 0px 0px 0 #604768; }
+  @media (min-width: 600px) {
+    img {
+      margin: 0 0 10px auto; } }
+
+h1 {
+  color: #B768AA;
+  text-shadow: 14px 14px 0 #604768, 13px 13px 0 #604768, 12px 12px 0 #604768, 11px 11px 0 #604768, 10px 10px 0 #604768, 9px 9px 0 #604768, 8px 8px 0 #604768, 7px 7px 0 #604768, 6px 6px 0 #604768, 5px 5px 0 #604768, 4px 4px 0 #604768, 3px 3px 0 #604768, 2px 2px 0 #604768, 1px 1px 0 #604768, 0px 0px 0 #604768;
+  font-size: 4rem; }
+
+p {
+  line-height: 1.5; }
+
+a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  transition-duration: 200ms;
+  transition-property: text-shadow;
+  text-shadow: 4px 4px 0 #7F4D7B, 3px 3px 0 #7F4D7B, 2px 2px 0 #7F4D7B, 1px 1px 0 #7F4D7B, 0px 0px 0 #7F4D7B; }
+  a:hover {
+    text-shadow: 6px 6px 0 #B768AA, 5px 5px 0 #B768AA, 4px 4px 0 #B768AA, 3px 3px 0 #B768AA, 2px 2px 0 #B768AA, 1px 1px 0 #B768AA, 0px 0px 0 #B768AA; }
+    a:hover:before {
+      opacity: 0.6;
+      top: 1.3em;
+      background: #B768AA; }
+
+.error-text {
+  font-size: 15rem;
+  text-align: center;
+  color: #B768AA;
+  text-shadow: 10px 10px 0 #7F4D7B, 9px 9px 0 #7F4D7B, 8px 8px 0 #7F4D7B, 7px 7px 0 #7F4D7B, 6px 6px 0 #7F4D7B, 5px 5px 0 #7F4D7B, 4px 4px 0 #7F4D7B, 3px 3px 0 #7F4D7B, 2px 2px 0 #7F4D7B, 1px 1px 0 #7F4D7B, 0px 0px 0 #7F4D7B; }
+
+.error-img {
+  box-shadow: none;
+  width: 100%; }
+
+/*# sourceMappingURL=styles.css.map */

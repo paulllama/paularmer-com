@@ -1,13 +1,5 @@
 ## Dev
-Run these commands in seperate terminal tabs
-```
-hugo server
-scss --watch static-src/sass/:static/css/
-```
-
+It's a static site. Just edit.
 
 ## Deploy
-```
-hugo
-firebase deploy
-```
+Hosted on Github Pages. Use `gh-pages`
