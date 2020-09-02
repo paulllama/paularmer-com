@@ -5,7 +5,8 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-		"build": "rm -rf build && mkdir build && cp src/*.css build/ && cp src/*.html build/ && cp -R src/media/ build/media/",
+    "dev": "sass --watch src/styles.scss:src/styles.css",
+    "build": "rm -rf build && mkdir build && cp src/CNAME build/ && cp src/*.css build/ && cp src/*.html build/ && cp -R src/media/ build/media/",
     "deploy": "gh-pages -d build"
   },
   "browserslist": {

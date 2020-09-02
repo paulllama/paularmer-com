@@ -1,5 +1,5 @@
 static/
-.idea/
-public/
+*.css
+*.css.map
 build/
 node_modules/
