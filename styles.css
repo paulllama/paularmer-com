@@ -61,11 +61,12 @@ h1 {
 .text-container {
   max-width: 28rem;
   padding-top: 4rem;
+  padding: 1rem;
 }
 @media (min-width: 600px) {
   .text-container {
     margin: 0 auto;
-    padding-right: 3rem;
+    padding: 0 3rem 0 0;
   }
 }
 
