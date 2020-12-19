@@ -1,42 +1,20 @@
+$color-bg: #ff9c6b;
+$color-text: #fff4e9;
+
+$font-body: 'Roboto', sans-serif;
+$font-header: 'Limelight', cursive;
+
 body {
   margin: 0;
   padding: 0;
-  background: #3A2A49;
-  font-family: 'Rubik', sans-serif;
-}
-
-.text-container {
-  max-width: 32rem;
-  padding: 1rem;
-  margin: 2rem auto;
-  color: #ECDEF9;
-
-  @media (min-width: 600px) {
-    margin: 9vh auto;
-  }
-}
-
-
-img {
-  border-radius: 10px;
-  width: 200px;
-  // TODO Convert this to a loop
-  box-shadow: 20px 20px 0 #604768, 19px 19px 0 #604768, 18px 18px 0 #604768, 17px 17px 0 #604768, 16px 16px 0 #604768, 15px 15px 0 #604768, 14px 14px 0 #604768, 13px 13px 0 #604768, 12px 12px 0 #604768, 11px 11px 0 #604768, 10px 10px 0 #604768, 9px 9px 0 #604768, 8px 8px 0 #604768, 7px 7px 0 #604768, 6px 6px 0 #604768, 5px 5px 0 #604768, 4px 4px 0 #604768, 3px 3px 0 #604768, 2px 2px 0 #604768, 1px 1px 0 #604768, 0px 0px 0 #604768;
-
-  @media (min-width: 600px) {
-    margin: 0 0 10px auto;
-  }
-}
-
-h1 {
-  color: #B768AA;
-  // TODO convert this to a loop
-  text-shadow: 14px 14px 0 #604768, 13px 13px 0 #604768, 12px 12px 0 #604768, 11px 11px 0 #604768, 10px 10px 0 #604768, 9px 9px 0 #604768, 8px 8px 0 #604768, 7px 7px 0 #604768, 6px 6px 0 #604768, 5px 5px 0 #604768, 4px 4px 0 #604768, 3px 3px 0 #604768, 2px 2px 0 #604768, 1px 1px 0 #604768, 0px 0px 0 #604768;
-  font-size: 4rem;
+  background: $color-bg;
+  font-family: $font-body;
+  color: $color-text;
+  font-size: 16px;
 }
 
 p {
-  line-height: 1.5;
+  line-height: 2;
 }
 
 a {
@@ -44,29 +22,117 @@ a {
   display: inline-block;
   text-decoration: none;
   font-weight: bold;
-  transition-duration: 200ms;
-  transition-property: text-shadow;
-  text-shadow: 4px 4px 0 #7F4D7B, 3px 3px 0 #7F4D7B, 2px 2px 0 #7F4D7B, 1px 1px 0 #7F4D7B, 0px 0px 0 #7F4D7B;
+  transition-duration: 300ms;
+  transition-property: background-color color padding margin;
+  background: rgba($color-text, 0.2);
+  padding: 0 0.25em;
+  margin: 0.1em -0.25em;
 
   &:hover {
-    text-shadow: 6px 6px 0 #B768AA, 5px 5px 0 #B768AA, 4px 4px 0 #B768AA, 3px 3px 0 #B768AA, 2px 2px 0 #B768AA, 1px 1px 0 #B768AA, 0px 0px 0 #B768AA;
-
-    &:before {
-      opacity: 0.6;
-      top: 1.3em;
-      background: #B768AA;
-    }
+    color: $color-bg;
+    background: rgba($color-text, 0.4);
+    padding: 0 0.5em;
+    margin: 0.1em -0.5em;
   }
 }
 
-.error-text {
-  font-size: 15rem;
-  text-align: center;
-  color: #B768AA;
-  text-shadow: 10px 10px 0 #7F4D7B, 9px 9px 0 #7F4D7B, 8px 8px 0 #7F4D7B, 7px 7px 0 #7F4D7B, 6px 6px 0 #7F4D7B, 5px 5px 0 #7F4D7B, 4px 4px 0 #7F4D7B, 3px 3px 0 #7F4D7B, 2px 2px 0 #7F4D7B, 1px 1px 0 #7F4D7B, 0px 0px 0 #7F4D7B;
+h1 {
+  color: #FFE1C1;
+  font-size: 6rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  line-height: 1;
+  font-family: $font-header;
 }
 
-.error-img {
-  box-shadow: none;
-  width: 100%;
+.error-container {
+  max-width: 52rem;
+  margin: 6rem auto 3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.columns {
+  max-width: 52rem;
+  margin: 6rem auto 3rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+}
+
+.text-container {
+  max-width: 28rem;
+  padding-top: 4rem;
+
+  @media (min-width: 600px) {
+    margin: 0 auto;
+    padding-right: 3rem;
+  }
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.framed-image {
+  $frame-color: $color-text;
+  $frame-color-med: darken($color-text, 5%);
+  $frame-color-dark: darken($color-text, 10%);
+
+  background-color: $color-text;
+  border: solid 4vmin $color-text;
+  border-top-color: $frame-color-dark;
+  border-left-color: $frame-color-med;
+  border-right-color: $frame-color-med;
+  border-bottom-color: $color-text;
+  border-radius: 2px;
+  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+  box-sizing:border-box;
+  display:inline-block;
+  margin: 0 2rem 5rem;
+  padding:0vmin;
+  position:relative;
+  text-align:center;
+
+  &:before {
+    border-radius:2px;
+    bottom:-1.5vmin;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
+    content:"";
+    left:-1.5vmin;
+    position:absolute;
+    right:-1.5vmin;
+    top:-1.5vmin;
+  }
+
+  &:after {
+    border-radius:2px;
+    bottom:-2vmin;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+    content:"";
+    left: -2vmin;
+    position:absolute;
+    right: -2vmin;
+    top: -2vmin;
+  }
+
+  img {
+    border:solid 2px;
+    border-bottom-color: $color-text;
+    border-left-color: $frame-color-med;
+    border-right-color: $frame-color-med;
+    border-top-color: $frame-color-dark;
+    max-height:100%;
+    max-width:100%;
+  }
+}
+
+.plant {
+  width: 20em;
 }
