@@ -4,6 +4,9 @@ $color-text: #fff4e9;
 $font-body: 'Roboto', sans-serif;
 $font-header: 'Limelight', cursive;
 
+$screen-table: 420px;
+$screen-desktop: 720px;
+
 body {
   margin: 0;
   padding: 0;
@@ -38,13 +41,17 @@ a {
 
 h1 {
   color: #FFE1C1;
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1;
   font-family: $font-header;
 
-  @media (min-width: 600px) {
+  @media (min-width: $screen-table) {
+    font-size: 4rem;
+  }
+
+  @media (min-width: $screen-desktop) {
     font-size: 6rem;
   }
 }
@@ -57,7 +64,7 @@ h1 {
   text-align: center;
   padding: 1.5rem;
 
-  @media (min-width: 600px) {
+  @media (min-width: $screen-desktop) {
     margin: 3rem auto;
     flex-direction: column;
   }
@@ -74,7 +81,7 @@ h1 {
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 600px) {
+  @media (min-width: $screen-desktop) {
     margin: 6rem auto 3rem;
     flex-direction: column;
   }
@@ -83,7 +90,7 @@ h1 {
     display: flex;
     flex-direction: row;
 
-    @media (min-width: 600px) {
+    @media (min-width: $screen-desktop) {
       flex-direction: row-reverse;
     }
 
@@ -92,7 +99,7 @@ h1 {
       height: 120px;
       flex: 0 0 120px;
 
-      @media (min-width: 600px) {
+      @media (min-width: $screen-desktop) {
         width: 200px;
         height: 200px;
         margin: 0 2em;
@@ -101,9 +108,13 @@ h1 {
     }
 
     h1 {
-      margin-left: 1.5rem;
+      margin-left: 1rem;
 
-      @media (min-width: 600px) {
+      @media (min-width: $screen-table) {
+        margin-left: 1.5rem;
+      }
+
+      @media (min-width: $screen-desktop) {
         margin-left: 0rem;
       }
     }
@@ -114,14 +125,14 @@ h1 {
     flex-direction: column;
     align-items: flex-end;
 
-    @media (min-width: 600px) {
+    @media (min-width: $screen-desktop) {
       flex-direction: row;
     }
 
     &__text {
       align-self: flex-start;
 
-      @media (min-width: 600px) {
+      @media (min-width: $screen-desktop) {
         max-width: 28rem;
         margin: 0 auto;
         padding: 0 3rem 0 0;
@@ -132,7 +143,7 @@ h1 {
       align-self: flex-end;
       width: 14em;
 
-      @media (min-width: 600px) {
+      @media (min-width: $screen-desktop) {
         margin-top: 6rem;
         width: 20em;
       }
