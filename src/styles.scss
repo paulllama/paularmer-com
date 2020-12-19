@@ -51,10 +51,20 @@ h1 {
 
 .error-container {
   max-width: 52rem;
-  margin: 6rem auto 3rem;
+  margin: 0 auto 2rem;
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 1.5rem;
+
+  @media (min-width: 600px) {
+    margin: 3rem auto;
+    flex-direction: column;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
 }
 
 .content {
