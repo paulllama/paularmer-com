@@ -5,9 +5,9 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-    "dev": "sass --watch src/styles.scss:src/styles.css",
-    "build": "rm -rf build && mkdir build && cp src/CNAME build/ && cp src/*.css build/ && cp src/*.html build/ && cp -R src/media/ build/media/",
-    "deploy": "gh-pages -d build"
+    "start": "node ./scripts/start.js",
+    "watch-styles": "./scripts/watch-styles.sh",
+    "deploy": "./script/deploy.sh"
   },
   "browserslist": {
     "production": [
