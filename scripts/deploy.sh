@@ -12,7 +12,8 @@ cp src/styles/pixel-sans.* build/
 git checkout build
 rm -rf `ls | grep -v build`
 mv build/* .
-# git add .
-# git commit -am "Deploying to production on `date`"
-# git push
-# git checkout main
+rm -rf build/
+git add .
+git commit -am "Deploying to 'build' on `date`"
+git push
+git checkout main
