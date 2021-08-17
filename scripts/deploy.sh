@@ -17,7 +17,7 @@ git pull
 rm -rf `ls | grep -v build`
 mv build/* .
 rm -rf build/
-git add .
-git commit -am "Deploying to 'build' on `date`"
-git push
-git checkout main
+# git add .
+# git commit -am "Deploying to 'build' on `date`"
+# git push
+# git checkout main
