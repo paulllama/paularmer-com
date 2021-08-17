@@ -102,11 +102,17 @@ body {
 }
 
 #window {
+	$window-spacing: 2rem;
 	position: fixed;
-	top: 2rem;
-	right: 2rem;
-	width: 100%;
-	max-width: 30rem;
+	top: $window-spacing;
+	right: $window-spacing;
+	width: calc(100% - #{$window-spacing * 2});
+	max-width: 32rem;
+
+	@media (min-width: 63rem) {
+		right: unset;
+		left: 31rem;
+	}
 
 	article {
 		display: none;
