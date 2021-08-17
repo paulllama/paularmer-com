@@ -1,6 +1,7 @@
 @import 'reset';
 
 $color-bg: #008080;
+$color-active: #000080;
 $color-text-light: #ffffff;
 $color-text-dark: #000000;
 
@@ -75,13 +76,27 @@ body {
 		flex-direction: column;
 		align-items: center;
 		color: $color-text-light;
+		cursor: pointer;
 
 		img {
 			width: $icon-size;
+			padding-bottom: 0.4rem;
 		}
 
 		label {
+			cursor: pointer;
 			text-align: center;
+			padding: 0 0.2rem;
+		}
+
+		&:active, &:focus {
+			img {
+				// https://codepen.io/sosuke/pen/Pjoqqp
+				filter: invert(10%) sepia(95%) saturate(7489%) hue-rotate(247deg) brightness(50%) contrast(125%);
+			}
+			label {
+				background: $color-active;
+			}
 		}
   }
 }
@@ -106,7 +121,7 @@ body {
 
 		header {
 			color: $color-text-light;
-			background: #000080;
+			background: $color-active;
 			padding: 0.2rem 0.2rem 0.3rem 1rem;
 			margin-bottom: 0.4rem;
 		}

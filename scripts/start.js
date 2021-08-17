@@ -3,8 +3,9 @@ const fs = require('fs')
 
 const regex = {
   css: /.*\.css$/,
-  img: /.*\.png|jpg|svg$/,
   font: /.*\.woff|woff2|ttf$/,
+  img: /.*\.png|jpg|svg$/,
+  js: /.*\.js$/,
 }
 
 const server = http.createServer((req, res) => {
@@ -16,12 +17,18 @@ const server = http.createServer((req, res) => {
   if (testUrl(regex.img)) {
     filePath = `./src/${req.url}`
     contentType = 'image'
-  } else if (testUrl(regex.css)) {
+  }
+  else if (testUrl(regex.css)) {
     filePath = './src/styles.css'
     contentType = 'text/css'
-  } else if (testUrl(regex.font)) {
-    filePath = `./src/styles/${req.url}`
+  }
+  else if (testUrl(regex.font)) {
+    filePath = `./src/styles${req.url}`
     contentType = 'font'
+  }
+  else if (testUrl(regex.js)) {
+    filePath = `./src/scripts.js`
+    contentType = 'text/javascript'
   }
 
 
