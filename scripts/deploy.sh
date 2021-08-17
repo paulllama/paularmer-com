@@ -9,6 +9,7 @@ cp -R src/media/ build/media/
 cp src/styles/pixel-sans.* build/
 
 git checkout build
+rm -rf `ls | grep -v build`
 mv build/* .
 # git add .
 # git commit -am "Deploying to production on `date`"
