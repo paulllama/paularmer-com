@@ -3,20 +3,27 @@ const fs = require('fs')
 
 const regex = {
   css: /.*\.css$/,
-  img: /.*\.png|jpg|svg$/
+  img: /.*\.png|jpg|svg$/,
+  font: /.*\.woff|woff2|ttf$/,
 }
 
 const server = http.createServer((req, res) => {
   let filePath = './src/index.html'
   let contentType = 'text/html'
 
-  if (regex.img.test(req.url)) {
+  const testUrl = pattern => pattern.test(req.url)
+
+  if (testUrl(regex.img)) {
     filePath = `./src/${req.url}`
     contentType = 'image'
-  } else if (regex.css.test(req.url)) {
+  } else if (testUrl(regex.css)) {
     filePath = './src/styles.css'
     contentType = 'text/css'
+  } else if (testUrl(regex.font)) {
+    filePath = `./src/styles/${req.url}`
+    contentType = 'font'
   }
+
 
   console.log(`serving ${filePath} for ${req.url}`)
   res.writeHead(200, { 'content-type': contentType })
