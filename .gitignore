@@ -1,6 +1,6 @@
 static/
-*.css
-*.css.map
+src/*.css
+src/*.css.map
 build/
 node_modules/
 .DS_Store/
