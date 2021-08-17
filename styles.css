@@ -66,8 +66,14 @@ body img {
   position: fixed;
   top: 2rem;
   right: 2rem;
-  width: 100%;
-  max-width: 30rem;
+  width: calc(100% - 4rem);
+  max-width: 32rem;
+}
+@media (min-width: 63rem) {
+  #window {
+    right: unset;
+    left: 31rem;
+  }
 }
 #window article {
   display: none;
