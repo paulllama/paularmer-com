@@ -130,6 +130,10 @@ body {
 			@include window-inset();
 			background: $color-text-light;
 			padding: 0.3rem 0.6rem;
+
+			img {
+				width: 100%;
+			}
 		}
 	}
 }
