@@ -5,6 +5,7 @@ mkdir build
 cp src/CNAME build/
 cp src/*.css build/
 cp src/*.html build/
+cp src/*.js build/
 cp -R src/media/ build/media/
 cp src/styles/pixel-sans.* build/
 
