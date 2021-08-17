@@ -1,5 +1,7 @@
-# Want this to stop if something fails
+# build
+sass src/styles/index.scss:src/styles.css
 
+# Move to build
 rm -rf build
 mkdir build
 cp src/CNAME build/
@@ -9,6 +11,7 @@ cp src/*.js build/
 cp -R src/media/ build/media/
 cp src/styles/pixel-sans.* build/
 
+# Deploy to git
 git checkout build
 rm -rf `ls | grep -v build`
 mv build/* .
