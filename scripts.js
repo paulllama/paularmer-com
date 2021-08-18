@@ -20,6 +20,17 @@ const initIcons = () => {
 	})
 }
 
+const initWindows = () => {
+	document.querySelectorAll('#window header').forEach(header => {
+		const xButton = document.createElement('button')
+		xButton.onclick = () => {
+			header.parentElement.classList.remove('active')
+		}
+
+		header.appendChild(xButton)
+	})
+}
+
 const initToolbar = () => {
 	const startButton = document.querySelector('#toolbar button')
 	startButton.onclick = () => window.location.reload()
@@ -28,5 +39,6 @@ const initToolbar = () => {
 (function () {
 	initLinks()
 	initIcons()
+	initWindows()
 	initToolbar()
 })();

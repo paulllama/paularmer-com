@@ -24,6 +24,20 @@ body {
 }
 body button {
   font-family: "Pixel Sans", monospace;
+  border-top: 0.2rem solid #ececec;
+  border-left: 0.2rem solid #ececec;
+  border-bottom: 0.2rem solid #474747;
+  border-right: 0.2rem solid #474747;
+  border-radius: 0;
+  outline: 0;
+  cursor: pointer;
+  background: lightgray;
+}
+body button:active {
+  border-bottom: 0.2rem solid #ececec;
+  border-right: 0.2rem solid #ececec;
+  border-top: 0.2rem solid #474747;
+  border-left: 0.2rem solid #474747;
 }
 body img {
   image-rendering: crisp-edges;
@@ -91,8 +105,19 @@ body img {
 #window article header {
   color: #ffffff;
   background: #000080;
-  padding: 0.2rem 0.2rem 0.3rem 1rem;
+  padding: 0.2rem 0.3rem 0.2rem 1rem;
   margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#window article header button {
+  font-size: 1.2rem;
+  padding: 0.2em 0.35em 0.35em 0.45em;
+  line-height: 1;
+}
+#window article header button:before {
+  content: "X";
 }
 #window article main {
   border-bottom: 0.2rem solid #ececec;
@@ -118,10 +143,6 @@ body img {
   padding: 0.3rem;
 }
 #toolbar button {
-  border-top: 0.2rem solid #ececec;
-  border-left: 0.2rem solid #ececec;
-  border-bottom: 0.2rem solid #474747;
-  border-right: 0.2rem solid #474747;
   display: flex;
   align-items: center;
   font-size: 0.8rem;
@@ -130,12 +151,6 @@ body img {
   margin-right: 0.4rem;
   width: 2em;
   height: 2em;
-}
-#toolbar button:active {
-  border-bottom: 0.2rem solid #ececec;
-  border-right: 0.2rem solid #ececec;
-  border-top: 0.2rem solid #474747;
-  border-left: 0.2rem solid #474747;
 }
 #toolbar aside {
   font-size: 0.6rem;
