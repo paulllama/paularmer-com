@@ -80,13 +80,12 @@ body img {
   position: fixed;
   top: 2rem;
   right: 2rem;
-  width: calc(100% - 4rem);
-  max-width: 32rem;
 }
 @media (min-width: 63rem) {
   #window {
     right: unset;
     left: 31rem;
+    width: 100%;
   }
 }
 #window article {
@@ -98,9 +97,14 @@ body img {
   border-right: 0.2rem solid #474747;
   color: #000000;
   padding: 0.25rem 0.25rem 0.85rem 0.25rem;
+  width: calc(100% - 4rem);
+  max-width: 32rem;
 }
 #window article.active {
   display: block;
+}
+#window article.wide {
+  max-width: 48rem;
 }
 #window article header {
   color: #ffffff;
@@ -126,7 +130,24 @@ body img {
   border-top: 0.2rem solid #474747;
   border-left: 0.2rem solid #474747;
   background: #ffffff;
-  padding: 0.3rem 0.6rem;
+}
+#window article main p {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+#window article main table {
+  width: 100%;
+  border-spacing: 0;
+}
+#window article main table th {
+  border-top: 0.2rem solid #ececec;
+  border-left: 0.2rem solid #ececec;
+  border-bottom: 0.2rem solid #474747;
+  border-right: 0.2rem solid #474747;
+  background: #c6c6c6;
+}
+#window article main table td {
+  padding: 0.25em 0.7em;
 }
 #window article main img {
   width: 100%;
