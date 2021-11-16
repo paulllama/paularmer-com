@@ -115,12 +115,11 @@ body {
 	position: fixed;
 	top: $window-spacing;
 	right: $window-spacing;
-	width: calc(100% - #{$window-spacing * 2});
-	max-width: 32rem;
 
 	@media (min-width: 63rem) {
 		right: unset;
 		left: 31rem;
+		width: 100%;
 	}
 
 	article {
@@ -129,9 +128,15 @@ body {
 		@include window-bezel();
 		color: $color-text-dark;
 		padding: 0.25rem 0.25rem 0.85rem 0.25rem;
+		width: calc(100% - #{$window-spacing * 2});
+		max-width: 32rem;
 
 		&.active {
 			display: block;
+		}
+
+		&.wide {
+			max-width: 48rem;
 		}
 
 		header {
@@ -158,7 +163,25 @@ body {
 		main {
 			@include window-inset();
 			background: $color-text-light;
-			padding: 0.3rem 0.6rem;
+
+			p {
+				padding-left: 0.6rem;
+				padding-right: 0.6rem;
+			}
+
+			table {
+				width: 100%;
+				border-spacing: 0;
+
+				th {
+					@include window-bezel();
+					background: $color-gray;
+				}
+
+				td {
+					padding: 0.25em 0.7em;
+				}
+			}
 
 			img {
 				width: 100%;
