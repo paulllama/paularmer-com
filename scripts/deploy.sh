@@ -16,7 +16,7 @@ cp -R src/media/ build/media/
 cp src/styles/pixel-sans.* build/
 
 # Deploy to git
-git checkout -- build
+git checkout build --
 git pull
 rm -rf `ls | grep -v build`
 mv build/* .
