@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+@font-face {
+  font-family: "Pixel Sans";
+  src: url("pixel-sans.woff2") format("woff2"), url("pixel-sans.woff") format("woff"), url("pixel-sans.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  background: #008080;
+  font-family: "Pixel Sans", monospace;
+  font-size: 12px;
+}
+body button {
+  font-family: "Pixel Sans", monospace;
+  border-top: 0.2rem solid #ececec;
+  border-left: 0.2rem solid #ececec;
+  border-bottom: 0.2rem solid #474747;
+  border-right: 0.2rem solid #474747;
+  border-radius: 0;
+  outline: 0;
+  cursor: pointer;
+  background: lightgray;
+}
+body button:active {
+  border-bottom: 0.2rem solid #ececec;
+  border-right: 0.2rem solid #ececec;
+  border-top: 0.2rem solid #474747;
+  border-left: 0.2rem solid #474747;
+}
+body img {
+  image-rendering: crisp-edges;
+}
+
+#desktop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 16rem;
+}
+#desktop figure {
+  width: 6rem;
+  min-height: 6rem;
+  padding: 0.2rem;
+  margin: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+#desktop figure img {
+  width: 4rem;
+  padding-bottom: 0.4rem;
+}
+#desktop figure label {
+  cursor: pointer;
+  text-align: center;
+  padding: 0 0.2rem;
+}
+#desktop figure:active img, #desktop figure:focus img {
+  filter: invert(10%) sepia(95%) saturate(7489%) hue-rotate(247deg) brightness(50%) contrast(125%);
+}
+#desktop figure:active label, #desktop figure:focus label {
+  background: #000080;
+}
+
+#window {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+@media (min-width: 63rem) {
+  #window {
+    right: unset;
+    left: 31rem;
+    width: 100%;
+  }
+}
+#window article {
+  display: none;
+  background: #c6c6c6;
+  border-top: 0.2rem solid #ececec;
+  border-left: 0.2rem solid #ececec;
+  border-bottom: 0.2rem solid #474747;
+  border-right: 0.2rem solid #474747;
+  color: #000000;
+  padding: 0.25rem 0.25rem 0.85rem 0.25rem;
+  width: calc(100% - 4rem);
+  max-width: 32rem;
+}
+#window article.active {
+  display: block;
+}
+#window article.wide {
+  max-width: 48rem;
+}
+#window article header {
+  color: #ffffff;
+  background: #000080;
+  padding: 0.2rem 0.3rem 0.2rem 1rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#window article header button {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.2em 0.35em 0.35em 0.45em;
+  line-height: 1;
+}
+#window article header button:before {
+  content: "X";
+}
+#window article main {
+  border-bottom: 0.2rem solid #ececec;
+  border-right: 0.2rem solid #ececec;
+  border-top: 0.2rem solid #474747;
+  border-left: 0.2rem solid #474747;
+  background: #ffffff;
+}
+#window article main p {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+#window article main table {
+  width: 100%;
+  border-spacing: 0;
+}
+#window article main table th {
+  border-top: 0.2rem solid #ececec;
+  border-left: 0.2rem solid #ececec;
+  border-bottom: 0.2rem solid #474747;
+  border-right: 0.2rem solid #474747;
+  background: #c6c6c6;
+}
+#window article main table td {
+  padding: 0.25em 0.7em;
+}
+#window article main img {
+  width: 100%;
+}
+
+#toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  background: #c6c6c6;
+  border-top: 0.2rem solid #ececec;
+  padding: 0.3rem;
+}
+#toolbar button {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+#toolbar button img {
+  margin-right: 0.4rem;
+  width: 2em;
+  height: 2em;
+}
+#toolbar aside {
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.6rem;
+  border-bottom: 0.2rem solid #ececec;
+  border-right: 0.2rem solid #ececec;
+  border-top: 0.2rem solid #474747;
+  border-left: 0.2rem solid #474747;
+}
+
+/*# sourceMappingURL=styles.css.map */
