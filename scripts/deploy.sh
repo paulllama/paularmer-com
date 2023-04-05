@@ -1,9 +1,13 @@
-# build
-sass src/styles/index.scss:src/styles.css
-
-# Move to build
+# reset
 rm -rf build
 mkdir build
+touch build/index.html
+
+# build
+sass src/styles/index.scss:src/styles.css
+npm run build
+
+# Move to build
 cp src/CNAME build/
 cp src/*.css build/
 cp src/*.html build/

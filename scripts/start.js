@@ -6,10 +6,11 @@ const regex = {
   font: /.*\.woff|woff2|ttf$/,
   img: /.*\.png|jpg|svg$/,
   js: /.*\.js$/,
+  pdf: /.*\.pdf$/,
 }
 
 const server = http.createServer((req, res) => {
-  let filePath = './src/index.html'
+  let filePath = './build/index.html'
   let contentType = 'text/html'
 
   const testUrl = pattern => pattern.test(req.url)
@@ -17,6 +18,10 @@ const server = http.createServer((req, res) => {
   if (testUrl(regex.img)) {
     filePath = `./src/${req.url}`
     contentType = 'image'
+  }
+  else if (testUrl(regex.pdf)) {
+    filePath = `./src/${req.url}`
+    contentType = 'x-pdf'  
   }
   else if (testUrl(regex.css)) {
     filePath = './src/styles.css'
