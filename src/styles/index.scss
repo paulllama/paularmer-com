@@ -118,7 +118,7 @@ body {
 
 	@media (min-width: 63rem) {
 		right: unset;
-		left: 31rem;
+		left: 28rem;
 		width: 100%;
 	}
 
@@ -129,7 +129,7 @@ body {
 		color: $color-text-dark;
 		padding: 0.25rem 0.25rem 0.85rem 0.25rem;
 		width: calc(100% - #{$window-spacing * 2});
-		max-width: 32rem;
+		max-width: 38rem;
 
 		&.active {
 			display: block;
@@ -167,6 +167,11 @@ body {
 			p {
 				padding-left: 0.6rem;
 				padding-right: 0.6rem;
+
+				> img {
+					float: right;
+					padding-left: 1.5rem;
+				}
 			}
 
 			table {
@@ -181,10 +186,6 @@ body {
 				td {
 					padding: 0.25em 0.7em;
 				}
-			}
-
-			img {
-				width: 100%;
 			}
 		}
 	}

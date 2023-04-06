@@ -21,6 +21,7 @@ if (!markdownFileNames || markdownFileNames.length < 1) {
 const mdConverter = new showdown.Converter({ 
     metadata: true,
     tables: true,
+    parseImgDimensions: true,
 })
 const shortcutTemplate = fs.readFileSync(SHORTCUT_TEMPLATE_PATH).toString()
 const windowTemplate = fs.readFileSync(WINDOW_TEMPLATE_PATH).toString()
@@ -41,7 +42,6 @@ const renderHtml = (template, data) => {
     return renderedHtml
 }
 
-let first = true
 markdownFileNames.forEach(markdownFileName => {
     console.log(markdownFileName)
     
@@ -49,22 +49,20 @@ markdownFileNames.forEach(markdownFileName => {
     const body = mdConverter.makeHtml(markdown)
     const metadata = mdConverter.getMetadata() // must get run after .makeHtml()
 
-    const title = metadata['title']
-    const iconUrl = metadata['icon_url']
+    const { title, iconUrl, cssClass } = metadata
     const id = markdownFileName.replace('.md', '')
 
     const shortcutHtml = renderHtml(shortcutTemplate, {
         id,
-        'icon_url': iconUrl,
+        iconUrl,
         title,
     })
     const windowHtml = renderHtml(windowTemplate, {
         id,
         title,
         body,
-        cssClass: first ? 'active' : '',
+        cssClass,
     })
-    first = false
 
     shortcuts.push(shortcutHtml)
     windows.push(windowHtml)

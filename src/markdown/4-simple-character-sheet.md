@@ -1,5 +1,5 @@
 ---
-icon_url: address_book_pad_users.png
+iconUrl: address_book_pad_users.png
 title: Simple Character Sheet
 ---
 

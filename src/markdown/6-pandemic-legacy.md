@@ -1,5 +1,5 @@
 ---
-icon_url: defragment-0.png
+iconUrl: defragment-0.png
 title: Pandemic Legacy Board Game Tracker
 ---
 NOTE: I made this before 2020

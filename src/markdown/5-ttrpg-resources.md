@@ -1,5 +1,5 @@
 ---
-icon_url: directory_open_cabinet_fc-2.png
+iconUrl: directory_open_cabinet_fc-2.png
 title: Custom TTRPG Resources
 ---
 
