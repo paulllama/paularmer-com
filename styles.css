@@ -84,7 +84,7 @@ body img {
 @media (min-width: 63rem) {
   #window {
     right: unset;
-    left: 31rem;
+    left: 28rem;
     width: 100%;
   }
 }
@@ -98,7 +98,7 @@ body img {
   color: #000000;
   padding: 0.25rem 0.25rem 0.85rem 0.25rem;
   width: calc(100% - 4rem);
-  max-width: 32rem;
+  max-width: 38rem;
 }
 #window article.active {
   display: block;
@@ -135,6 +135,10 @@ body img {
   padding-left: 0.6rem;
   padding-right: 0.6rem;
 }
+#window article main p > img {
+  float: right;
+  padding-left: 1.5rem;
+}
 #window article main table {
   width: 100%;
   border-spacing: 0;
@@ -148,9 +152,6 @@ body img {
 }
 #window article main table td {
   padding: 0.25em 0.7em;
-}
-#window article main img {
-  width: 100%;
 }
 
 #toolbar {
