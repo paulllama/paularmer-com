@@ -1,6 +1,7 @@
 # reset
 rm -rf build
 mkdir build
+npm install
 
 # build
 sass src/styles/:src/
