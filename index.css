@@ -134,20 +134,29 @@ body img {
   max-height: 80vh;
   overflow-y: auto;
 }
-#window article main h1, #window article main h2, #window article main h3 {
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
+#window article main h2, #window article main h3, #window article main h4, #window article main h5 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   margin-bottom: 0;
 }
-#window article main h1 small, #window article main h1 em, #window article main h2 small, #window article main h2 em, #window article main h3 small, #window article main h3 em {
+#window article main h2 em, #window article main h3 em, #window article main h4 em, #window article main h5 em {
+  font-size: 0.75rem;
   color: #999999;
+}
+#window article main h2 {
+  margin-top: 0.75em;
 }
 #window article main h3 {
   margin-top: 0;
+  font-weight: bold;
+}
+#window article main h4 {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
 }
 #window article main p {
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 #window article main p > img {
   float: right;
@@ -155,8 +164,8 @@ body img {
   width: 40%;
 }
 #window article main ul {
-  padding-left: 1.6rem;
-  padding-right: 0.6rem;
+  padding-left: 1.75rem;
+  padding-right: 0.75rem;
 }
 #window article main table {
   width: 100%;
@@ -205,4 +214,4 @@ body img {
   border-left: 0.2rem solid #474747;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=index.css.map */
