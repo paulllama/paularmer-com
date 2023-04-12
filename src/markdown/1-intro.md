@@ -1,7 +1,7 @@
 ---
 iconUrl: msg_information-0.png
 title: About-Paul.txt
-cssClass: 1active
+cssClass: active
 ---
 
 ![Me](media/cherry-blossom-paul.png) Hey there--Paul here! I'm a:

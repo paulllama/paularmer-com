@@ -2,7 +2,7 @@
 iconUrl: program_manager-1.png
 title: Job History
 isJobHistory: true
-cssClass: active
+cssClass: not-active
 ---
 
 <label>Download my [printer-friendly resume](/resume.html).</label>
