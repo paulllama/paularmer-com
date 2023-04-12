@@ -9,4 +9,4 @@ cssClass: active
 - :game_die: avid table-top gamer
 - :man_technologist: professional software engineer *(currently looking for work!)*
 
-Click on the shortcuts to learn more about my projects. If you want to get a hold of me, shoot me an email: [me@paularmer.website](mailto:me@paularmer.website)).
+Click on the shortcuts to learn more about my projects. If you want to get a hold of me, shoot me an email: [me@paularmer.website](mailto:me@paularmer.website).
