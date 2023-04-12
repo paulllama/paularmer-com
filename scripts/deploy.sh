@@ -1,10 +1,9 @@
 # reset
 rm -rf build
 mkdir build
-touch build/index.html
 
 # build
-sass src/styles/index.scss:src/styles.css
+sass src/styles/:src/
 npm run build
 
 # Move to build

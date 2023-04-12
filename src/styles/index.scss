@@ -4,6 +4,7 @@ $color-bg: #008080;
 $color-active: #000080;
 $color-text-light: #ffffff;
 $color-text-dark: #000000;
+$color-text-med: lighten($color-text-dark, 60%);
 
 $color-gray: #c6c6c6;
 $color-gray-highlight: lighten($color-gray, 15%);
@@ -166,19 +167,53 @@ body {
 			}
 		}
 
+		@mixin window-side-padding($buffer-left: 0rem) {
+			padding-left: (0.75rem + $buffer-left);
+			padding-right: 0.75rem;
+		}
+
 		main {
 			@include window-inset();
 			background: $color-text-light;
+			max-height: 80vh;
+			overflow-y: auto;
+
+			h2, h3, h4, h5 {
+				@include window-side-padding();	
+				margin-bottom: 0;
+
+				em {
+					font-size: 0.75rem;
+					color: $color-text-med;
+				}
+			}
+
+			h2 {
+				margin-top: 0.75em;
+			}
+
+			h3 {
+				margin-top: 0;
+				font-weight: bold;
+			}
+
+			h4 {
+				margin-top: .25rem;
+				font-size: 0.75rem;
+			}
 
 			p {
-				padding-left: 0.6rem;
-				padding-right: 0.6rem;
+				@include window-side-padding();
 
 				> img {
 					float: right;
 					padding-left: 1.5rem;
-					width: 45%;
+					width: 40%;
 				}
+			}
+
+			ul {
+				@include window-side-padding($buffer-left: 1rem);	
 			}
 
 			table {

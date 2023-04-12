@@ -1,45 +1,56 @@
 const http = require('http')
 const fs = require('fs')
 
-const regex = {
-  css: /.*\.css$/,
-  font: /.*\.woff|woff2|ttf$/,
-  img: /.*\.png|jpg|svg$/,
-  js: /.*\.js$/,
-  pdf: /.*\.pdf$/,
-}
+const assetTypes = [
+  {
+    regex: /.*\.css(\.map)?$/, 
+    type: 'text/css',
+  },
+  {
+    regex: /.*\.woff|woff2|ttf$/, 
+    type: 'font',
+    path: url => `./src/styles${url}`,
+  },
+  {
+    regex: /(\/|.*\.html)$/, 
+    type: 'text/html',
+    path: url => `./build${url === '/' ? '/index.html' : url}`,
+  },
+  {
+    regex: /.*\.png|jpg|svg|ico$/, 
+    type: 'image',
+  },
+  {
+    regex: /.*\.js$/, 
+    type: 'text/javascript',
+  },
+  {
+    regex: /.*\.pdf$/, 
+    type: 'x-pdf',
+  },
+]
 
 const server = http.createServer((req, res) => {
-  let filePath = './build/index.html'
-  let contentType = 'text/html'
+  let filePath
+  let contentType
 
-  const testUrl = pattern => pattern.test(req.url)
-
-  if (testUrl(regex.img)) {
-    filePath = `./src/${req.url}`
-    contentType = 'image'
+  for (const { regex, type, path} of assetTypes) {
+    if (!filePath && regex.test(req.url)) {
+      filePath = path ? path(req.url) : `./src${req.url}`
+      contentType = type
+    }
   }
-  else if (testUrl(regex.pdf)) {
-    filePath = `./src/${req.url}`
-    contentType = 'x-pdf'  
-  }
-  else if (testUrl(regex.css)) {
-    filePath = './src/styles.css'
-    contentType = 'text/css'
-  }
-  else if (testUrl(regex.font)) {
-    filePath = `./src/styles${req.url}`
-    contentType = 'font'
-  }
-  else if (testUrl(regex.js)) {
-    filePath = `./src/scripts.js`
-    contentType = 'text/javascript'
-  }
-
 
   console.log(`serving ${filePath} for ${req.url}`)
   res.writeHead(200, { 'content-type': contentType })
-  fs.createReadStream(filePath).pipe(res)
+  try {
+    const readable = fs.createReadStream(filePath)
+    readable.pipe(res)
+  } catch (e) {
+    console.error(e)
+    res.writeHead(404, { 'content-type': 'text/html' })
+    fs.createReadStream('./src/404.html').pipe(res)
+  }
 })
 
 const port = process.env.PORT || 6969

@@ -1,10 +1,12 @@
 ---
 iconUrl: msg_information-0.png
-title: Paul-Armer.txt
-cssClass: active
+title: About-Paul.txt
+cssClass: 1active
 ---
 
-![Me](media/cherry-blossom-paul.png =45%x*) Hey there--Paul here! I'm a multi-discipline artist, avid table-top gamer, and professional software engineer currently looking for work. I want my next position to be at a company that prioritizes bringing joy to its users, instead of maximizing profit for its investors. 
+![Me](media/cherry-blossom-paul.png) Hey there--Paul here! I'm a:
+- :art: multi-discipline artist
+- :game_die: avid table-top gamer
+- :man_technologist: professional software engineer *(currently looking for work!)*
 
-If you want to get a hold of me, I've got two emails: 
-[him](mailto:him@paularmer.website)/[them](mailto:them@paularmer.website)@paularmer.website
+Click on the shortcuts to learn more about my projects. If you want to get a hold of me, shoot me an email: [me@paularmer.website](mailto:me@paularmer.website)).
