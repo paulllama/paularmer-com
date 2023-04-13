@@ -43,50 +43,65 @@ body img {
   image-rendering: crisp-edges;
 }
 
-#desktop {
+@media (min-width: 63rem) {
+  #desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+#shortcuts {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 16rem;
+  width: 100%;
 }
-#desktop figure {
-  width: 6rem;
-  min-height: 6rem;
-  padding: 0.2rem;
-  margin: 0.8rem;
+@media (min-width: 63rem) {
+  #shortcuts {
+    width: 17.6rem;
+  }
+}
+#shortcuts figure {
+  width: calc(50% - 2.4rem);
+  min-height: 6.4rem;
+  padding: 0.24rem;
+  margin: 0.96rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #ffffff;
   cursor: pointer;
+  z-index: 0;
 }
-#desktop figure img {
+@media (min-width: 63rem) {
+  #shortcuts figure {
+    width: 6.4rem;
+  }
+}
+#shortcuts figure img {
   width: 4rem;
   padding-bottom: 0.4rem;
 }
-#desktop figure label {
+#shortcuts figure label {
   cursor: pointer;
   text-align: center;
   padding: 0 0.2rem;
 }
-#desktop figure:active img, #desktop figure:focus img {
+#shortcuts figure:active img, #shortcuts figure:focus img {
   filter: invert(10%) sepia(95%) saturate(7489%) hue-rotate(247deg) brightness(50%) contrast(125%);
 }
-#desktop figure:active label, #desktop figure:focus label {
+#shortcuts figure:active label, #shortcuts figure:focus label {
   background: #000080;
 }
 
 #window {
-  position: fixed;
-  top: 2rem;
-  left: 2rem;
-  right: 2rem;
+  padding: 0.2rem;
 }
 @media (min-width: 63rem) {
   #window {
-    right: unset;
-    left: 28rem;
-    width: 100%;
+    position: relative;
+    padding: 2rem;
   }
 }
 #window article {
@@ -103,6 +118,16 @@ body img {
 }
 #window article.active {
   display: block;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 63rem) {
+  #window article.active {
+    position: unset;
+  }
 }
 #window article.wide {
   max-width: 48rem;
@@ -159,9 +184,16 @@ body img {
   padding-right: 0.75rem;
 }
 #window article main p > img {
-  float: right;
-  padding-left: 1.5rem;
-  width: 40%;
+  width: 75%;
+  margin: 0 auto 1rem;
+  display: block;
+}
+@media (min-width: 63rem) {
+  #window article main p > img {
+    float: right;
+    padding-left: 1.5rem;
+    width: 40%;
+  }
 }
 #window article main ul {
   padding-left: 1.75rem;
