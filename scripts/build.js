@@ -1,2 +1,4 @@
 const { buildHtml } = require('./build-html')
-buildHtml()
+buildHtml({
+    verbose: true,
+})

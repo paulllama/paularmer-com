@@ -12,7 +12,12 @@ const RESUME_TEMPLATE_PATH = `${TEMPLATE_DIR}/resume.html`
 const SHORTCUT_TEMPLATE_PATH = `${TEMPLATE_DIR}/shortcut.html`
 const WINDOW_TEMPLATE_PATH = `${TEMPLATE_DIR}/window.html`
 
-const buildHtml = () => {
+const buildHtml = (options) => {
+    const { verbose } = options || {}
+
+    const logMsgForce = console.log
+    const logMsg = verbose ? logMsgForce : () => null
+    const logErr = console.error
 
     // clear out build directory and create empty build files
     fs.mkdirSync(BUILD_DIR, { recursive: true })
@@ -21,7 +26,7 @@ const buildHtml = () => {
 
     const markdownFileNames = fs.readdirSync(MARKDOWN_DIR)
     if (!markdownFileNames || markdownFileNames.length < 1) {
-        console.log('Error reading markdown files')
+        logErr('Error reading markdown files')
         return -1
     }
 
@@ -57,12 +62,12 @@ const buildHtml = () => {
         const contents = renderHtml(template, data)
         const html = renderHtml(baseTemplate, { contents })
         fs.writeFileSync(buildPath, html)
-        console.log(`Built ${buildPath}`)
+        logMsgForce(`Built ${buildPath}`)
     }
 
-    console.log('Finding markdown files...')
+    logMsg('Finding markdown files...')
     markdownFileNames.forEach(markdownFileName => {
-        console.log(`\t${markdownFileName}`)
+        logMsg(`\t${markdownFileName}`)
         
         const markdown = fs.readFileSync(`${MARKDOWN_DIR}/${markdownFileName}`).toString()
         const body = mdConverter.makeHtml(markdown)

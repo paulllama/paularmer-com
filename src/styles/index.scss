@@ -70,20 +70,31 @@ body {
 }
 
 #desktop {
+	@media (min-width: $screen-desktop) {
+		display: flex; 
+		flex-direction: row;
+		align-items: flex-start;
+	}
+}
+
+#shortcuts {
 	$columns: 2;
 	$icon-size: 4rem;
-	$shortcut-spacing: 1rem;
+	$shortcut-spacing: 1.2rem;
 	$shortcut-size: $icon-size + 2 * $shortcut-spacing;
 	$shortcut-height: 8rem;
-
 
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	width: $columns * ($shortcut-size + 2 * $shortcut-spacing);
+	width: 100%;
+
+	@media (min-width: $screen-desktop) {
+		width: $columns * ($shortcut-size + 2 * $shortcut-spacing);
+	}
 
   	figure {
-		width: $shortcut-size;
+		width: calc(50% - ($shortcut-spacing * 2));
 		min-height: $shortcut-size;
 		padding: $shortcut-spacing * 0.2;
 		margin: $shortcut-spacing * 0.8;
@@ -92,6 +103,11 @@ body {
 		align-items: center;
 		color: $color-text-light;
 		cursor: pointer;
+		z-index: 0;
+
+		@media (min-width: $screen-desktop) {
+			width: $shortcut-size;
+		}
 
 		img {
 			width: $icon-size;
@@ -118,15 +134,11 @@ body {
 
 #window {
 	$window-spacing: 2rem;
-	position: fixed;
-	top: $window-spacing;
-	left: $window-spacing;
-	right: $window-spacing;
+	padding: 0.2rem;
 
 	@media (min-width: $screen-desktop) {
-		right: unset;
-		left: 28rem;
-		width: 100%;
+		position: relative;
+		padding: 2rem;
 	}
 
 	article {
@@ -140,6 +152,15 @@ body {
 
 		&.active {
 			display: block;
+			z-index: 1;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+
+			@media (min-width: $screen-desktop) {
+				position: unset;
+			}
 		}
 
 		&.wide {
@@ -206,9 +227,15 @@ body {
 				@include window-side-padding();
 
 				> img {
-					float: right;
-					padding-left: 1.5rem;
-					width: 40%;
+					width: 75%;
+					margin: 0 auto 1rem;
+					display: block; 
+
+					@media (min-width: $screen-desktop) {
+						float: right;
+						padding-left: 1.5rem;
+						width: 40%;
+						}
 				}
 			}
 
