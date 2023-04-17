@@ -45,11 +45,13 @@ $window-padding-bottom: 0.85rem;
 	border-right: $window-border-width solid $color-gray-shadow;
 }
 
+html {
+	font-size: 14px;
+}
 
 body {
   background: $color-bg;
   font-family: $font-body;
-  font-size: 12px;
 
 	button {
 		font-family: $font-body;
@@ -69,6 +71,10 @@ body {
   }
 }
 
+.hide-for-screen {
+    display: none;
+}
+
 #desktop {
 	@media (min-width: $screen-desktop) {
 		display: flex; 
@@ -79,8 +85,8 @@ body {
 
 #shortcuts {
 	$columns: 2;
-	$icon-size: 4rem;
-	$shortcut-spacing: 1.2rem;
+	$icon-size: 5rem;
+	$shortcut-spacing: 1.3rem;
 	$shortcut-size: $icon-size + 2 * $shortcut-spacing;
 	$shortcut-height: 8rem;
 
@@ -118,6 +124,7 @@ body {
 			cursor: pointer;
 			text-align: center;
 			padding: 0 0.2rem;
+			font-size: 0.8rem;
 		}
 
 		&:active, &:focus {
@@ -148,7 +155,7 @@ body {
 		color: $color-text-dark;
 		padding: $window-padding $window-padding $window-padding-bottom $window-padding;
 		width: calc(100% - (2 * $window-border-width + 2 * $window-padding));
-		max-width: 38rem;
+		max-width: 50rem;
 
 		&.active {
 			display: block;
@@ -199,28 +206,33 @@ body {
 			max-height: 80vh;
 			overflow-y: auto;
 
-			h2, h3, h4, h5 {
+			h1, h2, h3, h4 {
 				@include window-side-padding();	
 				margin-bottom: 0;
 
 				em {
-					font-size: 0.75rem;
 					color: $color-text-med;
 				}
 			}
 
-			h2 {
-				margin-top: 0.75em;
+			h1 {
+				text-transform: uppercase;
+				color: $color-text-med;
 			}
 
-			h3 {
-				margin-top: 0;
-				font-weight: bold;
+			h2 {
+				margin-top: 0.75em;
+				font-size: 1.1rem;
+
+				strong {
+					display: block;
+					font-size: 1.3em;
+				}
 			}
 
 			h4 {
 				margin-top: .25rem;
-				font-size: 0.75rem;
+				font-size: 0.9rem;
 			}
 
 			p {

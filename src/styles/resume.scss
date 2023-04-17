@@ -36,6 +36,10 @@ body {
     margin: 0;
 }
 
+.hide-for-print {
+    display: none;
+}
+
 #header {
     width: calc(100% - 2rem);
     display: flex;
