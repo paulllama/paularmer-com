@@ -1,6 +1,9 @@
 const fs = require('fs')
 const { buildHtml, TEMPLATE_DIR, MARKDOWN_DIR } = require('./build-html')
 
+// build first then watch
+buildHtml()
+
 const watchOptions = {
     recursive: true,
 }

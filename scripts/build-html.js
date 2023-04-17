@@ -5,10 +5,11 @@ const BUILD_DIR = './build'
 const INDEX_BUILD_PATH = `${BUILD_DIR}/index.html`
 const RESUME_BUILD_PATH = `${BUILD_DIR}/resume.html`
 const MARKDOWN_DIR = './src/markdown'
+const INDEX_MARKDOWN_DIR = `${MARKDOWN_DIR}/index`
+const RESUME_MARKDOWN_INDEX = `${MARKDOWN_DIR}/resume/index.md`
 const TEMPLATE_DIR = './src/templates'
 const BASE_TEMPLATE_PATH = `${TEMPLATE_DIR}/base.html`
 const INDEX_TEMPLATE_PATH = `${TEMPLATE_DIR}/index.html`
-const RESUME_TEMPLATE_PATH = `${TEMPLATE_DIR}/resume.html`
 const SHORTCUT_TEMPLATE_PATH = `${TEMPLATE_DIR}/shortcut.html`
 const WINDOW_TEMPLATE_PATH = `${TEMPLATE_DIR}/window.html`
 
@@ -24,12 +25,6 @@ const buildHtml = (options) => {
     fs.openSync(INDEX_BUILD_PATH, 'w')
     fs.openSync(RESUME_BUILD_PATH, 'w')
 
-    const markdownFileNames = fs.readdirSync(MARKDOWN_DIR)
-    if (!markdownFileNames || markdownFileNames.length < 1) {
-        logErr('Error reading markdown files')
-        return -1
-    }
-
     const mdConverter = new showdown.Converter({ 
         metadata: true,
         tables: true,
@@ -38,10 +33,6 @@ const buildHtml = (options) => {
     })
     const shortcutTemplate = fs.readFileSync(SHORTCUT_TEMPLATE_PATH).toString()
     const windowTemplate = fs.readFileSync(WINDOW_TEMPLATE_PATH).toString()
-
-    const shortcuts = []
-    const windows = []
-    let jobHistory 
 
     const renderHtml = (template, data) => {
         let renderedHtml = template
@@ -57,28 +48,53 @@ const buildHtml = (options) => {
     }
 
     const baseTemplate = fs.readFileSync(BASE_TEMPLATE_PATH).toString()
-    const renderAndWritePage = (templatePath, buildPath, data) => {
-        const template = fs.readFileSync(templatePath).toString()
-        const contents = renderHtml(template, data)
+    const renderAndWritePage = (buildPath, templatePath, data) => {
+        let contents = templatePath
+
+        if (data) {
+            const template = fs.readFileSync(templatePath).toString()
+            contents = renderHtml(template, data)  
+        }
+
         const html = renderHtml(baseTemplate, { contents })
         fs.writeFileSync(buildPath, html)
-        logMsgForce(`Built ${buildPath}`)
+        logMsgForce(`wrote to ${buildPath}`)
+    }
+    const buildMdFileToHtml = mdPath => {
+        logMsg(`\t${mdPath}`)
+        const markdown = fs.readFileSync(mdPath).toString()
+        let body = mdConverter.makeHtml(markdown)
+        const { importMd, ...metadata } = mdConverter.getMetadata() || {} // must run after .makeHtml()
+    
+        if (importMd) {
+            const cleanImportMd = importMd.replaceAll(' ', '')
+            const importPairs = cleanImportMd.indexOf(',') > -1 
+                ? cleanImportMd.split(',') 
+                : [cleanImportMd]
+            body = importPairs.reduce((html, pair) => {
+                const [key, path] = pair.split('=')
+                const [importHtml] = buildMdFileToHtml(`${MARKDOWN_DIR}/${path}`)
+                return html.replace(`{{${key}}}`, importHtml)
+            }, body)
+        }
+
+        return [body, metadata]
     }
 
-    logMsg('Finding markdown files...')
+    logMsg('building index.html')
+
+    logMsg('  finding markdown files')
+    const markdownFileNames = fs.readdirSync(INDEX_MARKDOWN_DIR)
+    if (!markdownFileNames || markdownFileNames.length < 1) {
+        logErr('error reading markdown files')
+        return -1
+    }
+    const shortcuts = []
+    const windows = []
     markdownFileNames.forEach(markdownFileName => {
-        logMsg(`\t${markdownFileName}`)
-        
-        const markdown = fs.readFileSync(`${MARKDOWN_DIR}/${markdownFileName}`).toString()
-        const body = mdConverter.makeHtml(markdown)
-        const metadata = mdConverter.getMetadata() // must run after .makeHtml()
-
-        const { title, iconUrl, cssClass, isJobHistory } = metadata
         const id = markdownFileName.replace('.md', '')
-
-        if (metadata && isJobHistory) {
-            jobHistory = body.toString()
-        }
+        const [body, metadata] = buildMdFileToHtml(`${INDEX_MARKDOWN_DIR}/${markdownFileName}`)
+        const { title, iconUrl, cssClass } = metadata
 
         const shortcutHtml = renderHtml(shortcutTemplate, {
             id,
@@ -95,14 +111,14 @@ const buildHtml = (options) => {
         shortcuts.push(shortcutHtml)
         windows.push(windowHtml)
     })
-
-    renderAndWritePage(INDEX_TEMPLATE_PATH, INDEX_BUILD_PATH, {
+    renderAndWritePage(INDEX_BUILD_PATH, INDEX_TEMPLATE_PATH, {
         shortcuts: shortcuts.join('\n'),
         windows: windows.join('\n'),
     })
-    renderAndWritePage(RESUME_TEMPLATE_PATH, RESUME_BUILD_PATH, {
-        jobHistory,
-    })
+
+    logMsg('building resume.html')
+    const [resumeHtml] = buildMdFileToHtml(RESUME_MARKDOWN_INDEX)
+    renderAndWritePage(RESUME_BUILD_PATH, resumeHtml)
 }
 
 module.exports = {

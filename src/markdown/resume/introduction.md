@@ -1,0 +1,1 @@
+I am a team-oriented web developer with nearly 10 years of experience. I thrive on collaborating with stakeholders and teammates to plan how best to design and deliver features. I am excited to bring my empathetic approach to your team and make a positive impact on your organization.
