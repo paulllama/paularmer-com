@@ -94,7 +94,12 @@ const buildHtml = (options) => {
     markdownFileNames.forEach(markdownFileName => {
         const id = markdownFileName.replace('.md', '')
         const [body, metadata] = buildMdFileToHtml(`${INDEX_MARKDOWN_DIR}/${markdownFileName}`)
-        const { title, iconUrl, cssClass } = metadata
+        const { title, iconUrl, cssClass } = {
+            title: ' ',
+            iconUrl: null,
+            cssClass: ' ',
+            ...metadata
+        }
 
         const shortcutHtml = renderHtml(shortcutTemplate, {
             id,
