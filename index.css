@@ -63,6 +63,7 @@ body img {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  flex-shrink: 0;
 }
 @media (min-width: 63rem) {
   #shortcuts {
@@ -103,6 +104,26 @@ body img {
   background: #000080;
 }
 
+@keyframes windowFadeIn {
+  from {
+    transform: translate(-25vw, 0) scale(0.5, 0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes windowFadeOut {
+  from {
+    transform: translate(0, 0) scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-25vw, 0) scale(0.5, 0.5);
+    opacity: 0;
+  }
+}
 #window {
   padding: 0.2rem;
 }
@@ -123,22 +144,26 @@ body img {
   padding: 0.25rem 0.25rem 0.85rem 0.25rem;
   width: calc(100% - 0.9rem);
   max-width: 50rem;
-}
-#window article.active {
-  display: block;
-  z-index: 1;
+  animation-name: windowFadeOut;
+  animation-duration: 500ms;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  max-width: 42rem;
 }
 @media (min-width: 63rem) {
-  #window article.active {
+  #window article {
     position: unset;
   }
 }
+#window article.active {
+  display: block;
+  z-index: 1;
+  animation-name: windowFadeIn;
+}
 #window article.wide {
-  max-width: 48rem;
+  max-width: unset;
 }
 #window article header {
   color: #ffffff;
@@ -195,18 +220,6 @@ body img {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-#window article main p > img {
-  width: 75%;
-  margin: 0 auto 1rem;
-  display: block;
-}
-@media (min-width: 63rem) {
-  #window article main p > img {
-    float: right;
-    padding-left: 1.5rem;
-    width: 40%;
-  }
-}
 #window article main ul {
   padding-left: 1.75rem;
   padding-right: 0.75rem;
@@ -224,6 +237,21 @@ body img {
 }
 #window article main table td {
   padding: 0.25em 0.7em;
+}
+#window article main img {
+  margin: 0 auto 1rem;
+  width: 94%;
+  display: block;
+}
+#window article main img[title=about-me-img] {
+  width: 75%;
+}
+@media (min-width: 63rem) {
+  #window article main img[title=about-me-img] {
+    float: right;
+    padding-left: 1.5rem;
+    width: 40%;
+  }
 }
 
 #toolbar {

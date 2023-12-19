@@ -6,6 +6,7 @@ const initLinks = () => {
 
 const initIcons = () => {
 	const ACTIVE_CLASS = 'active'
+	const HIDE_CLASS = 'hide'
 
 	document.querySelectorAll("#desktop figure").forEach(fig => {
 		const name = fig.getAttribute('name')
@@ -13,8 +14,10 @@ const initIcons = () => {
 		fig.onclick = () => {
 			document.querySelectorAll('#window article').forEach(art => {
 				art.classList.remove(ACTIVE_CLASS)
+				art.classList.add(HIDE_CLASS)
 			})
 			const activeArt = document.querySelector(`#window article[name='${name}']`) || document.querySelector(`#window article[name='soon']`)
+			activeArt.classList.remove(HIDE_CLASS)
 			activeArt.classList.add(ACTIVE_CLASS)
 		}
 	})

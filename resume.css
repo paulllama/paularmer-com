@@ -36,7 +36,7 @@ body {
   left: 0.3rem;
   height: 2rem;
   width: 100%;
-  background: #d6b300;
+  background: #f2ac15;
   z-index: -1;
 }
 #header #name {
@@ -71,7 +71,7 @@ body {
   line-height: 1;
   margin: 0 0 0.15em 0;
   text-transform: uppercase;
-  color: #d6b300;
+  color: #f2ac15;
   font-weight: 700;
 }
 #experience h2 {
@@ -84,7 +84,7 @@ body {
   content: "";
   height: 0.6em;
   width: 100%;
-  background: #d6b300;
+  background: #f2ac15;
   position: absolute;
   top: 0.8em;
   left: 0;
@@ -105,7 +105,7 @@ body {
   font-weight: 400;
 }
 #experience a {
-  color: #d6b300;
+  color: #f2ac15;
   text-decoration: none;
 }
 #experience ul {
@@ -116,11 +116,11 @@ body {
   margin-bottom: 0.25rem;
 }
 #experience #main-column {
-  flex-basis: 72%;
+  flex-basis: 60%;
   padding-right: 1.25rem;
 }
 #experience #side-column {
-  flex-basis: 28%;
+  flex-basis: 40%;
 }
 
 /*# sourceMappingURL=resume.css.map */
