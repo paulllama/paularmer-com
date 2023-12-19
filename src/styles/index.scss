@@ -84,19 +84,20 @@ body {
 }
 
 #shortcuts {
-	$columns: 2;
-	$icon-size: 5rem;
+	$shortcut-columns: 2;
+	$shortcut-icon-size: 5rem;
 	$shortcut-spacing: 1.3rem;
-	$shortcut-size: $icon-size + 2 * $shortcut-spacing;
+	$shortcut-size: $shortcut-icon-size + 2 * $shortcut-spacing;
 	$shortcut-height: 8rem;
 
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	width: 100%;
+	flex-shrink: 0;
 
 	@media (min-width: $screen-desktop) {
-		width: $columns * ($shortcut-size + 2 * $shortcut-spacing);
+		width: $shortcut-columns * ($shortcut-size + 2 * $shortcut-spacing);
 	}
 
   	figure {
@@ -116,7 +117,7 @@ body {
 		}
 
 		img {
-			width: $icon-size;
+			width: $shortcut-icon-size;
 			padding-bottom: 0.4rem;
 		}
 
@@ -139,6 +140,29 @@ body {
 	}
 }
 
+@keyframes windowFadeIn {
+	from {
+		transform: translate(-25vw, 0) scale(0.5, 0.5);
+		opacity: 0;
+	}
+  
+	to {
+		transform: translate(0, 0) scale(1,1);
+		opacity: 1;
+	}
+}
+@keyframes windowFadeOut {
+	from {
+		transform: translate(0, 0) scale(1,1);
+		opacity: 1;
+	}
+	to {
+		transform: translate(-25vw, 0) scale(0.5, 0.5);
+		opacity: 0;
+	}
+}
+
+
 #window {
 	$window-spacing: 2rem;
 	padding: 0.2rem;
@@ -156,22 +180,26 @@ body {
 		padding: $window-padding $window-padding $window-padding-bottom $window-padding;
 		width: calc(100% - (2 * $window-border-width + 2 * $window-padding));
 		max-width: 50rem;
+		animation-name: windowFadeOut;
+		animation-duration: 500ms;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		max-width: 42rem;
+
+		@media (min-width: $screen-desktop) {
+			position: unset;
+		}
 
 		&.active {
 			display: block;
 			z-index: 1;
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-
-			@media (min-width: $screen-desktop) {
-				position: unset;
-			}
+			animation-name: windowFadeIn;
 		}
 
 		&.wide {
-			max-width: 48rem;
+			max-width: unset;
 		}
 
 		header {
@@ -237,18 +265,6 @@ body {
 
 			p {
 				@include window-side-padding();
-
-				> img {
-					width: 75%;
-					margin: 0 auto 1rem;
-					display: block; 
-
-					@media (min-width: $screen-desktop) {
-						float: right;
-						padding-left: 1.5rem;
-						width: 40%;
-						}
-				}
 			}
 
 			ul {
@@ -266,6 +282,22 @@ body {
 
 				td {
 					padding: 0.25em 0.7em;
+				}
+			}
+
+			img {
+				margin: 0 auto 1rem;
+				width: 94%;
+				display: block;
+
+				&[title="about-me-img"] {
+					width: 75%;
+	
+					@media (min-width: $screen-desktop) {
+						float: right;
+						padding-left: 1.5rem;
+						width: 40%;
+					}
 				}
 			}
 		}

@@ -15,7 +15,7 @@
 * Developed onboarding guidelines for new junior level employees joining the engineering team.
 * Collaborated with teams worldwide to gather product requirements, provide  customer success developer support, and coordinate deploys with other developers.
 
-## **Web Engineer & Designer** @ Study.com, *July 2014 - Nov 2017*
+## **Web Engineer/Designer** @ Study.com, *July 2014 - Nov 2017*
 #### *Main Technologies:* Java, Spring, Typescript, AngularJS
 * Designed the UI for new features with product owners and would be the front-end engineer to implement them.
 * Delivered Teacher Share: a feature allowing teachers to assign lessons via email and record students' quiz scores in Google Classroom.

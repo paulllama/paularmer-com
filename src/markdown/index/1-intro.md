@@ -4,7 +4,9 @@ title: About-Paul.txt
 cssClass: active
 ---
 
-![Me](media/cherry-blossom-paul.png) Hey there--Paul here! I'm a:
+![Me](media/cherry-blossom-paul.png "about-me-img") 
+
+Hey there--Paul here! I'm a:
 - :art: multi-discipline artist
 - :game_die: avid table-top gamer
 - :man_technologist: professional software engineer *(currently looking for work!)*
