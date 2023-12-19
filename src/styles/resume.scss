@@ -1,5 +1,5 @@
-$color-accent: #d6b300;
-$color-compliment: #000080;
+$color-accent: #f2ac15;
+$color-compliment: #066346;
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&family=Rubik:ital,wght@0,400;0,600;1,400&display=swap');
 
@@ -145,11 +145,11 @@ body {
     }
 
     #main-column {
-        flex-basis: 72%;
+        flex-basis: 60%;
         padding-right: 1.25rem;
     }
 
     #side-column {
-        flex-basis: 28%;
+        flex-basis: 40%;
     }
 }
