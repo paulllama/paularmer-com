@@ -10,11 +10,7 @@ I play a lot of TTRPGs that *aren't* Dungeons & Dragons that pretty much require
 
 My friends and I are nerds, so we really wanted to do well as we played the Panedmic Legacy board game. I ended up building a probability engine helps predict and visualize the next cards to be drawn from the deck. 
 
-### Personal Website
+### Laser Cut Art
 #### [paularmer.website](https://paularmer.website)
 
-It started as just some static HTML, but slowly turned into a whole Node.js build pipeline. My resume is even rendered using assets from the website as part of the build scripts. 
-
-// talk about challenges i was solving with the UI. 
-// maybe build out UI analysis documents for each project
-// talk about prioritization 
+Over the last few years I've been developing my skills as a physical artist. I've grown to love laser cut woodworking, mostly making game tokens and organizers for my friends. While it's not software development, it's been a great exercise in managing product requirements. I want to make cool, attractive art that is also solves the gaming needs of my friends.
