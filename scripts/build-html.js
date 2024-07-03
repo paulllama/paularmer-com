@@ -112,7 +112,7 @@ const buildHtml = (options) => {
     const shortcutTemplate = fs.readFileSync(WEBSITE_SHORTCUT_HTML_PATH).toString()
     const windowTemplate = fs.readFileSync(WEBSITE_WINDOW_HTML_PATH).toString()
 
-    const websiteContents = getBuildableFilePaths(WEBSITE_CONTENT_DIR).reduce(
+    const { shortcuts, windows } = getBuildableFilePaths(WEBSITE_CONTENT_DIR).reduce(
         (content, mdFileName) => {
             const id = mdFileName.replace('.md', '')
             const [body, metadata] = buildMdFileToHtml(`${WEBSITE_CONTENT_DIR}/${mdFileName}`)
@@ -149,7 +149,10 @@ const buildHtml = (options) => {
         }
     )
 
-    renderAndWritePage(WEBSITE_INDEX_BUILD_PATH, WEBSITE_INDEX_HTML_PATH, websiteContents)
+    renderAndWritePage(WEBSITE_INDEX_BUILD_PATH, WEBSITE_INDEX_HTML_PATH, {
+        shortcuts: shortcuts.join(''),
+        windows: windows.join(''),
+    })
     renderAndWritePage(WEBSITE_404_BUILD_PATH, WEBSITE_404_HTML_PATH, {
         htmlRenderDate: new Date(),
     })

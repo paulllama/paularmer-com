@@ -9,12 +9,11 @@ const assetTypes = [
   {
     regex: /.*\.woff|woff2|ttf$/, 
     type: 'font',
-    path: url => `./src/styles${url}`,
   },
   {
     regex: /(\/|.*\.html)$/, 
     type: 'text/html',
-    path: url => `./build${url === '/' ? '/index.html' : url}`,
+    path: url => `${url === '/' ? '/index.html' : url}`,
   },
   {
     regex: /.*\.png|jpg|svg|ico$/, 
@@ -36,7 +35,7 @@ const server = http.createServer((req, res) => {
 
   for (const { regex, type, path} of assetTypes) {
     if (!filePath && regex.test(req.url)) {
-      filePath = path ? path(req.url) : `./src${req.url}`
+      filePath = `./build${path ? path(req.url) : req.url}`
       contentType = type
     }
   }
@@ -49,7 +48,7 @@ const server = http.createServer((req, res) => {
   } catch (e) {
     console.error(e)
     res.writeHead(404, { 'content-type': 'text/html' })
-    fs.createReadStream('./src/404.html').pipe(res)
+    fs.createReadStream('./build/404.html').pipe(res)
   }
 })
 
