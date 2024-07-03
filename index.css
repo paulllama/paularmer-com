@@ -12,7 +12,7 @@ figure {
 
 @font-face {
   font-family: "Pixel Sans";
-  src: url("pixel-sans.woff2") format("woff2"), url("pixel-sans.woff") format("woff"), url("pixel-sans.ttf") format("ttf");
+  src: url("media/pixel-sans.woff2") format("woff2"), url("media/pixel-sans.woff") format("woff"), url("media/pixel-sans.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
