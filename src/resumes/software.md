@@ -1,15 +1,13 @@
 ---
 importMd: 
-    jobExperience=resume/job-experience.md, 
-    sideProjects=resume/side-projects.md, 
-    education=resume/education.md,
-    introduction=resume/introduction.md
+    printResume=resumes/_print-resume.md,
+    jobExperience=resumes/_job-experience.md, 
+    sideProjects=resumes/_side-projects.md, 
+    education=resumes/_education.md,
+    introduction=resumes/_introduction.md,
 ---
-<script type="application/javascript">
-    window.print()
-</script>
 
-<h2 class="hide-for-print">printing</h2>
+{{printResume}}
 
 <div class="hide-for-screen">
     <div id="header">

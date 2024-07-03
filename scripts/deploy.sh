@@ -4,16 +4,7 @@ mkdir build
 npm install
 
 # build
-sass src/styles/:src/
 npm run build
-
-# Move to build
-cp src/CNAME build/
-cp src/*.css build/
-cp src/*.html build/
-cp src/*.js build/
-cp -R src/media/ build/media/
-cp src/styles/pixel-sans.* build/
 
 # Deploy to git
 git checkout build --

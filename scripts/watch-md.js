@@ -1,9 +1,10 @@
 const fs = require('fs')
-const { buildHtml, TEMPLATE_DIR, MARKDOWN_DIR } = require('./build-html')
+const { buildHtml, WATCHABLE_DIRS } = require('./build-html')
 
 // build first then watch
 buildHtml()
 
 const watchOptions = {}
-fs.watch(TEMPLATE_DIR, watchOptions, buildHtml)
-fs.watch(MARKDOWN_DIR, watchOptions, buildHtml)
+WATCHABLE_DIRS.forEach(dirPath => {
+    fs.watch(dirPath, watchOptions, buildHtml)
+})
