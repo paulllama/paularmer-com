@@ -20,7 +20,8 @@ $bg-rgb: #f3f1ec;
 $tree-ratio: math.div(123, 210);
 $tree-height: 70vh;
 $tree-width: $tree-height * $tree-ratio;
-$tree-gutter: 5rem;
+$tree-gutter-side: 6rem;
+$tree-gutter-vert: math.div((101vh - $tree-height), 2);
 
 html {
 	background: $bg-rgb;
@@ -38,7 +39,7 @@ body {
 	left: 0;
 	height: $tree-height;
 	width: $tree-width;
-	border-width: math.div((101vh - $tree-height), 2) $tree-gutter; 
+	border-width: ($tree-gutter-vert - 5vh) $tree-gutter-side ($tree-gutter-vert + 5vh); 
 	border-style: solid;
 	border-color: $bg-rgb;
 	fill: transparent;
@@ -74,13 +75,14 @@ body {
 }
 
 #content_container {
-	margin-left: calc((2 * $tree-gutter) + $tree-width);
+	margin-left: calc((2 * $tree-gutter-side) + $tree-width);
 	background: $bg-rgb;
 	overflow: hidden;
 }
 
 #content {
 	max-width: 40em;
+	padding: calc($tree-gutter-vert + 1rem) 0;
 
 	img {
 		max-width: 100%;
