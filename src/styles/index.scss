@@ -18,7 +18,7 @@ $dark-rgb: #1c2165;
 $bg-rgb: #f3f1ec;
 
 $tree-ratio: math.div(123, 210);
-$tree-height: 70vh;
+$tree-height: 65vh;
 $tree-width: $tree-height * $tree-ratio;
 $tree-gutter-side: 6rem;
 $tree-gutter-vert: math.div((101vh - $tree-height), 2);
@@ -83,8 +83,17 @@ body {
 #content {
 	max-width: 40em;
 	padding: calc($tree-gutter-vert + 1rem) 0;
+	line-height: 1.35;
 
 	img {
 		max-width: 100%;
+	}
+
+	ul {
+		padding-left: 1.5rem;
+
+		li {
+			padding-bottom: 0.5em;
+		}
 	}
 }
