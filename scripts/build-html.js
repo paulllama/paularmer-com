@@ -47,14 +47,6 @@ const buildHtml = (options) => {
         emoji: true,
     })
 
-    const getBuildableFilePaths = dirPath => {
-        const fileNames = fs.readdirSync(dirPath)
-        if (!fileNames || fileNames.length < 1) {
-            return failBuild(`error reading files from ${dirPath}`)
-        }
-        return fileNames.filter(fileName => !fileName.startsWith('_'))
-    }
-
     const renderHtml = (template, data) => {
         let renderedHtml = template
 
@@ -81,6 +73,7 @@ const buildHtml = (options) => {
         const html = renderHtml(baseTemplate, { contents })
         fs.writeFileSync(buildPath, html)
     }
+
     const buildMdFileToHtml = (mdPath, logIndent = '') => {
         logMsg(`${logIndent}building '${mdPath}'`)
         const markdown = fs.readFileSync(mdPath).toString()
@@ -105,67 +98,28 @@ const buildHtml = (options) => {
         return [body, metadata]
     }
 
-    // ACTUAL BUILD
+    const buildMdFilesInDir = (srcDir, buildDir) => {
+        const allFileNames = fs.readdirSync(srcDir)
+        if (!allFileNames || allFileNames.length < 1) {
+            return failBuild(`error reading files from ${srcDir}`)
+        }
+        allFileNames.filter(fn => !fn.startsWith('_')).forEach(fileName => {
+            const fileId = fileName.replace('.md', '')
+            const fileSrc = `${srcDir}/${fileName}`
+            const fileDest = `${buildDir}/${fileId}.html`
+            const [fileHtml] = buildMdFileToHtml(fileSrc, '\t')
+            renderAndWritePage(fileDest, fileHtml)
+        })
+    }
 
     logMsg('WEBSITE')
-
-    const shortcutTemplate = fs.readFileSync(WEBSITE_SHORTCUT_HTML_PATH).toString()
-    const windowTemplate = fs.readFileSync(WEBSITE_WINDOW_HTML_PATH).toString()
-
-    const { shortcuts, windows } = getBuildableFilePaths(WEBSITE_CONTENT_DIR).reduce(
-        (content, mdFileName) => {
-            const id = mdFileName.replace('.md', '')
-            const [body, metadata] = buildMdFileToHtml(`${WEBSITE_CONTENT_DIR}/${mdFileName}`)
-            const { title, iconUrl, cssClass } = {
-                title: ' ',
-                iconUrl: null,
-                cssClass: ' ',
-                ...metadata
-            }
-
-            return {
-                shortcuts: [
-                    ...content.shortcuts,
-                    renderHtml(shortcutTemplate, {
-                        id,
-                        iconUrl,
-                        title,
-                    })
-                ],
-                windows: [
-                    ...content.windows,
-                    renderHtml(windowTemplate, {
-                        id,
-                        title,
-                        body,
-                        cssClass,
-                    })
-                ]
-            }
-        }, 
-        {
-            shortcuts: [],
-            windows: [],
-        }
-    )
-
-    renderAndWritePage(WEBSITE_INDEX_BUILD_PATH, WEBSITE_INDEX_HTML_PATH, {
-        shortcuts: shortcuts.join(''),
-        windows: windows.join(''),
-    })
+    buildMdFilesInDir(WEBSITE_CONTENT_DIR, BUILD_DIR)
     renderAndWritePage(WEBSITE_404_BUILD_PATH, WEBSITE_404_HTML_PATH, {
         htmlRenderDate: new Date(),
     })
 
     logMsg('\nRESUMES')
-
-    getBuildableFilePaths(RESUMES_SRC_DIR).forEach(resumeName => {
-        const resumeId = resumeName.replace('.md', '')
-        const resumeSrc = `${RESUMES_SRC_DIR}/${resumeName}`
-        const resumeDest = `${RESUME_BUILD_PATH}/${resumeId}.html`
-        const [resumeHtml] = buildMdFileToHtml(resumeSrc)
-        renderAndWritePage(resumeDest, resumeHtml)
-    })
+    buildMdFilesInDir(RESUMES_SRC_DIR, RESUME_BUILD_PATH)
 }
 
 module.exports = {

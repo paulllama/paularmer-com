@@ -41,8 +41,8 @@ const server = http.createServer((req, res) => {
   }
 
   console.log(`serving ${filePath} for ${req.url}`)
-  res.writeHead(200, { 'content-type': contentType })
   try {
+    res.writeHead(200, { 'content-type': contentType })
     const readable = fs.createReadStream(filePath)
     readable.pipe(res)
   } catch (e) {
