@@ -1,9 +1,3 @@
----
-iconUrl: msg_information-0.png
-title: About-Paul.txt
-cssClass: active
----
-
 Hey there--Paul here! I'm a:
 - :man_technologist: technical product manager *(currently looking for work!)*
 - :art: multi-discipline artist

@@ -1,8 +1,4 @@
----
-iconUrl: paint_old-0.png
-title: Art
-cssClass: wide
----
+# Artist 
 
 ### Oil Still Life, *oil on canvas*
 ![Oil Still Life](media/art/oil-still-life.jpg)

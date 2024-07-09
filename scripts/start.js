@@ -33,15 +33,15 @@ const server = http.createServer((req, res) => {
   let filePath
   let contentType
 
-  for (const { regex, type, path} of assetTypes) {
-    if (!filePath && regex.test(req.url)) {
-      filePath = `./build${path ? path(req.url) : req.url}`
-      contentType = type
-    }
-  }
-
-  console.log(`serving ${filePath} for ${req.url}`)
   try {
+    for (const { regex, type, path} of assetTypes) {
+      if (!filePath && regex.test(req.url)) {
+        filePath = `./build${path ? path(req.url) : req.url}`
+        contentType = type
+      }
+    }
+  
+    console.log(`serving ${filePath} for ${req.url}`)
     res.writeHead(200, { 'content-type': contentType })
     const readable = fs.createReadStream(filePath)
     readable.pipe(res)

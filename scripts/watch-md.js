@@ -5,5 +5,9 @@ const { buildHtml, WATCHABLE_DIRS } = require('./build-html')
 buildHtml()
 
 WATCHABLE_DIRS.forEach(dirPath => {
-    fs.watch(dirPath, {}, buildHtml)
+    console.log(`watching '${dirPath}'`)
+    fs.watch(dirPath, {}, () => {
+        console.log(`changes to '${dirPath}'`)
+        buildHtml()
+    })
 })

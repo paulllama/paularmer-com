@@ -12,10 +12,10 @@
 
 $bark-rgb: #db7f46;
 $leaf-rgb: #81b053;
-$sun-start-rgb: #d9d75b;
-$sun-end-rgb: #58276d;
-$dark-rgb: #1c2165;
-$bg-rgb: #f3f1ec;
+$sun-start-rgb: #c7a763;
+$sun-end-rgb: #733f50;
+$dark-rgb: #0b3757;
+$bg-rgb: #e5ded9;
 
 $tree-ratio: math.div(123, 210);
 $tree-height: 65vh;
@@ -28,7 +28,11 @@ html {
 }
 
 body {
-	background: linear-gradient(180deg, $bg-rgb, $sun-start-rgb, $sun-end-rgb);
+	background: linear-gradient(180deg, 
+		($bg-rgb 0), 
+		($sun-start-rgb 30%), 
+		($sun-end-rgb 100%)
+	);
 	color: $dark-rgb;
 	font-family: 'NationalPark', sans-serif;
 }
