@@ -2,22 +2,14 @@ const showdown  = require('showdown')
 const fs = require('fs')
 const { BUILD_DIR, SRC_DIR } = require('./build.config')
 
-// build paths
-const WEBSITE_INDEX_BUILD_PATH = `${BUILD_DIR}/index.html`
 const WEBSITE_404_BUILD_PATH = `${BUILD_DIR}/404.html`
 const RESUME_BUILD_PATH = `${BUILD_DIR}/resume`
 
 const TEMPLATES_DIR = `${SRC_DIR}/templates`
 const BASE_TEMPLATE_PATH = `${TEMPLATES_DIR}/base.html`
-
-// website paths
+const RESUME_TEMPLATE_PATH = `${TEMPLATES_DIR}/resume.html`
 const WEBSITE_CONTENT_DIR = `${SRC_DIR}/content`
-const WEBSITE_INDEX_HTML_PATH = `${TEMPLATES_DIR}/index.html`
 const WEBSITE_404_HTML_PATH = `${TEMPLATES_DIR}/404.html`
-const WEBSITE_SHORTCUT_HTML_PATH = `${TEMPLATES_DIR}/shortcut.html`
-const WEBSITE_WINDOW_HTML_PATH = `${TEMPLATES_DIR}/window.html`
-
-// resume paths
 const RESUMES_SRC_DIR = `${SRC_DIR}/resumes`
 
 const WATCHABLE_DIRS = [
@@ -60,17 +52,12 @@ const buildHtml = (options) => {
         return renderedHtml
     }
 
-    const baseTemplate = fs.readFileSync(BASE_TEMPLATE_PATH).toString()
-    const renderAndWritePage = (buildPath, templatePath, data) => {
+    const renderAndWritePage = (buildPath, contents, template) => {
         logMsg(`writing ${buildPath}`)
-        let contents = templatePath
-
-        if (data) {
-            const template = fs.readFileSync(templatePath).toString()
-            contents = renderHtml(template, data)  
-        }
-
-        const html = renderHtml(baseTemplate, { contents })
+        const html = renderHtml(template, { 
+            htmlRenderDate: new Date(),
+            contents,
+         })
         fs.writeFileSync(buildPath, html)
     }
 
@@ -78,7 +65,7 @@ const buildHtml = (options) => {
         logMsg(`${logIndent}building '${mdPath}'`)
         const markdown = fs.readFileSync(mdPath).toString()
         let body = mdConverter.makeHtml(markdown)
-        const { importMd, ...metadata } = mdConverter.getMetadata() || {} // must run after .makeHtml()
+        const { importMd } = mdConverter.getMetadata() || {} // must run after .makeHtml()
     
         if (importMd) {
             const cleanImportMd = importMd.replaceAll(' ', '')
@@ -90,15 +77,15 @@ const buildHtml = (options) => {
                     return html
                 }
                 const [key, path] = pair.split('=')
-                const [importHtml] = buildMdFileToHtml(`${SRC_DIR}/${path}`, `  ${logIndent}`)
+                const importHtml = buildMdFileToHtml(`${SRC_DIR}/${path}`, `  ${logIndent}`)
                 return html.replace(`{{${key}}}`, importHtml)
             }, body)
         }
 
-        return [body, metadata]
+        return body
     }
 
-    const buildMdFilesInDir = (srcDir, buildDir) => {
+    const buildMdFilesInDir = (srcDir, buildDir, template) => {
         const allFileNames = fs.readdirSync(srcDir)
         if (!allFileNames || allFileNames.length < 1) {
             return failBuild(`error reading files from ${srcDir}`)
@@ -107,19 +94,19 @@ const buildHtml = (options) => {
             const fileId = fileName.replace('.md', '')
             const fileSrc = `${srcDir}/${fileName}`
             const fileDest = `${buildDir}/${fileId}.html`
-            const [fileHtml] = buildMdFileToHtml(fileSrc, '\t')
-            renderAndWritePage(fileDest, fileHtml)
+            const fileHtml = buildMdFileToHtml(fileSrc, '\t')
+            renderAndWritePage(fileDest, fileHtml, template)
         })
     }
 
     logMsg('WEBSITE')
-    buildMdFilesInDir(WEBSITE_CONTENT_DIR, BUILD_DIR)
-    renderAndWritePage(WEBSITE_404_BUILD_PATH, WEBSITE_404_HTML_PATH, {
-        htmlRenderDate: new Date(),
-    })
+    const baseTemplate = fs.readFileSync(BASE_TEMPLATE_PATH).toString()
+    buildMdFilesInDir(WEBSITE_CONTENT_DIR, BUILD_DIR, baseTemplate)
+    renderAndWritePage(WEBSITE_404_BUILD_PATH, WEBSITE_404_HTML_PATH, baseTemplate)
 
     logMsg('\nRESUMES')
-    buildMdFilesInDir(RESUMES_SRC_DIR, RESUME_BUILD_PATH)
+    const resumeTemplate = fs.readFileSync(RESUME_TEMPLATE_PATH).toString()
+    buildMdFilesInDir(RESUMES_SRC_DIR, RESUME_BUILD_PATH, resumeTemplate)
 }
 
 module.exports = {

@@ -1,0 +1,1 @@
+Following my tenure at Autodesk, I took a deliberate break to travel and explore new professional avenues. During this time, I pursued a variety of courses including art classes to deepen my proficiency in creative expression. I am now eager to leverage my renewed creativity and skills in my next role as a Product Manager.

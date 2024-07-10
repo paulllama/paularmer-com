@@ -1,14 +1,13 @@
 @use "sass:math";
-@import 'reset';
+@import 'shared';
 
 @font-face {
 	font-family: "NationalPark";
 	src:
-	  url("/media/nationalpark-variable.woff2") format("woff2"),
-	  url("/media/nationalpark-variable.woff") format("woff"),
-	  url("/media/nationalpark-variable.ttf") format("ttf");
-  }
-  
+		url("/media/nationalpark-variable.woff2") format("woff2"),
+		url("/media/nationalpark-variable.woff") format("woff"),
+		url("/media/nationalpark-variable.ttf") format("ttf");
+} 
 
 $bark-rgb: #db7f46;
 $leaf-rgb: #81b053;

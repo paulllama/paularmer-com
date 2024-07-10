@@ -1,22 +1,27 @@
 ---
 importMd: 
-    printResume=resumes/_print-resume.md,
+    intro=resumes/_product-intro.md,
+    jobExperience=resumes/_product-experience.md,
+    gmExperience=resumes/_gm-experience.md,
+    nbExperience=resumes/_nb-experience.md,
+    education=resumes/_education.md,
 ---
 
-{{printResume}}
-
-<div class="hide-for-screen">
-    <div id="header">
-        <section id="name">Paul Armer</section>
-        <aside id="email">me@paularmer.website</aside>
-        <aside id="github">github.com/paulllama</aside>
+<div id="header">
+    <section id="name">Paul Armer</section>
+    <aside id="email">me@paularmer.website</aside>
+    <aside id="github">github.com/paulllama</aside>
+</div>
+{{intro}}
+<div id="experience">
+    <div id="main-column">
+        <h2>Professional Experience</h2>
+        {{jobExperience}}
     </div>
-    <div id="introduction">
-    </div>
-    <div id="experience">
-        <div id="main-column">
-        </div>
-        <div id="side-column">
-        </div>
+    <div id="side-column">
+        <h2>Other Experience</h2>
+        {{gmExperience}}
+        {{nbExperience}}
+        {{education}}
     </div>
 </div>
