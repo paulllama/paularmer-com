@@ -13,7 +13,8 @@
 $bark-rgb: #db7f46;
 $leaf-rgb: #81b053;
 $sun-start-rgb: #c7a763;
-$sun-end-rgb: #733f50;
+$sun-mid-rgb: #9f4157;
+$sun-end-rgb: #50023f;
 $dark-rgb: #0b3757;
 $bg-rgb: #e5ded9;
 
@@ -30,8 +31,10 @@ html {
 body {
 	background: linear-gradient(180deg, 
 		($bg-rgb 0), 
-		($sun-start-rgb 30%), 
-		($sun-end-rgb 100%)
+		($sun-start-rgb 10%), 
+		($sun-mid-rgb 40%),
+		($sun-end-rgb 70%),
+		($dark-rgb 100%),
 	);
 	color: $dark-rgb;
 	font-family: 'NationalPark', sans-serif;
