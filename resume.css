@@ -78,6 +78,10 @@ p {
   margin-bottom: 0;
 }
 
+p, li {
+  line-height: 1.35;
+}
+
 a {
   color: #8faf70;
   text-decoration: none;
