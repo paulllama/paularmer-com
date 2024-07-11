@@ -29,7 +29,6 @@ importMd:
             {{product}}
             {{artist}}
             {{gamer}}
-            {{software}}
         </div>
     </div>
 </div>
