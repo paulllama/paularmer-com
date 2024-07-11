@@ -24,38 +24,69 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, #e5ded9 0, #c7a763 10%, #9f4157 40%, #50023f 70%, #0b3757 100%);
+  background: linear-gradient(180deg, #e5ded9 0, #c5ae7b 10%, #a7586b 40%, #773569 70%, #0b3757 100%);
   color: #0b3757;
   font-family: "NationalPark", sans-serif;
 }
 
 #tree {
   position: fixed;
+  fill: transparent;
   top: 0;
   left: 0;
-  height: 65vh;
-  width: 38.0714285714vh;
-  border-width: 13vh 6rem 23vh;
-  border-style: solid;
-  border-color: #e5ded9;
-  fill: transparent;
-}
-#tree_name {
-  background: #e5ded9;
-  padding-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
+  z-index: 2;
+  height: 5rem;
+  width: 100%;
 }
 #tree svg {
   position: absolute;
-  width: 38.0714285714vh;
+  width: 2.9285714286rem;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 600px) {
+  #tree {
+    height: 65vh;
+    width: 38.0714285714vh;
+    border-style: solid;
+    border-color: #e5ded9;
+    border-width: 18vh 3rem 18vh;
+  }
+  #tree svg {
+    width: 38.0714285714vh;
+    right: unset;
+  }
+}
+@media (min-width: 1000px) {
+  #tree {
+    border-left-width: 6rem;
+    border-right-width: 6rem;
+  }
+}
+#tree_name {
+  background: #e5ded9;
+  font-size: 2rem;
+  font-weight: bold;
+  left: 2.9285714286rem;
+  right: 0;
+  line-height: 5rem;
+  padding-left: 1em;
+  position: absolute;
+}
+@media (min-width: 600px) {
+  #tree_name {
+    padding-left: 0;
+    text-align: center;
+    line-height: 1;
+    left: 0;
+    top: -2em;
+  }
 }
 #tree_bark {
   fill: #db7f46;
 }
 #tree_greenery {
-  fill: #81b053;
+  fill: #8faf70;
 }
 #tree_outline {
   fill: #0b3757;
@@ -65,15 +96,45 @@ body {
 }
 
 #content_container {
-  margin-left: calc(12rem + 38.0714285714vh);
-  background: #e5ded9;
   overflow: hidden;
+}
+#content_container:before {
+  content: "";
+  display: block;
+  background: #e5ded9;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 5rem;
+  z-index: 0;
+}
+@media (min-width: 600px) {
+  #content_container {
+    background: #e5ded9;
+    margin-left: calc(6rem + 38.0714285714vh);
+  }
+  #content_container:before {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  #content_container {
+    margin-left: calc(12rem + 38.0714285714vh);
+  }
 }
 
 #content {
-  max-width: 40em;
-  padding: calc(18vh + 1rem) 0;
+  padding: 5rem 0.5rem 5rem 2.9285714286rem;
   line-height: 1.35;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 600px) {
+  #content {
+    max-width: 40em;
+    padding: calc(18vh - 1em) 1em calc(18vh - 1em) 0;
+  }
 }
 #content img {
   max-width: 100%;
