@@ -1,4 +1,4 @@
 ### TTRPG Game Master
-- Led multiple year-long campaigns across TTRPGs, crafting storylines for players and adapting gameplay mechanics to provide consistent challenges, showcasing leadership, creativity, and adaptability.
-- Organized and facilitated regular gaming sessions, a significant achievement for a group of adults, demonstrating organizational and facilitation skills.
-- Fostered a collaborative and inclusive gaming environment, encouraging vulnerability and expressive roleplay, reflecting commitment to inclusivity and effective communication.
+- Led multiple year-long campaigns across various TTRPG systems, crafting storylines and adapting gameplay mechanics to provide consistent challenges and fun for my players.
+- Organized and facilitated regular gaming sessions for my adult friends with a shared lore library to make information sharing easy.
+- Fostered a collaborative and inclusive gaming environment with safety features like X-card and Lines/Veils, to encourage vulnerability and expressive roleplay.
