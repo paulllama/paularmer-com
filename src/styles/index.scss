@@ -1,6 +1,7 @@
 @use "sass:math";
 @import 'shared';
 
+
 @font-face {
 	font-family: "NationalPark";
 	src:
@@ -9,19 +10,17 @@
 		url("/media/nationalpark-variable.ttf") format("ttf");
 } 
 
-$bark-rgb: #db7f46;
-$leaf-rgb: #81b053;
-$sun-start-rgb: #c7a763;
-$sun-mid-rgb: #9f4157;
-$sun-end-rgb: #50023f;
-$dark-rgb: #0b3757;
-$bg-rgb: #e5ded9;
+$mobile-cuttoff: 600px;
+$widescreen-cutoff: 1000px;
 
 $tree-ratio: math.div(123, 210);
-$tree-height: 65vh;
-$tree-width: $tree-height * $tree-ratio;
-$tree-gutter-side: 6rem;
-$tree-gutter-vert: math.div((101vh - $tree-height), 2);
+$tree-small-height: 5rem;
+$tree-small-width: $tree-small-height * $tree-ratio;
+$tree-big-height: 65vh;
+$tree-big-width: $tree-big-height * $tree-ratio;
+$tree-gutter-side: 3rem;
+$tree-gutter-side-wide: 6rem;
+$tree-gutter-vert: math.div((101vh - $tree-big-height), 2);
 
 html {
 	background: $bg-rgb;
@@ -41,26 +40,57 @@ body {
 
 #tree {
 	position: fixed;
+	fill: transparent;
 	top: 0;
 	left: 0;
-	height: $tree-height;
-	width: $tree-width;
-	border-width: ($tree-gutter-vert - 5vh) $tree-gutter-side ($tree-gutter-vert + 5vh); 
-	border-style: solid;
-	border-color: $bg-rgb;
-	fill: transparent;
+	z-index: 2;
 
-	&_name {
-		background: $bg-rgb;
-		padding-bottom: 1rem;
-		font-size: 2rem;
-		font-weight: 900;
-		text-align: center;
-	}
+	height: $tree-small-height;
+	width: 100%;
 
 	svg {
 		position: absolute;
-		width: $tree-width;
+		width: $tree-small-width;
+		top: 0;
+		left: 0;
+	}
+
+	@media (min-width: $mobile-cuttoff) {
+		height: $tree-big-height;
+		width: $tree-big-width;
+		border-style: solid;
+		border-color: $bg-rgb;
+		border-width: $tree-gutter-vert $tree-gutter-side $tree-gutter-vert; 
+	
+		svg {
+			width: $tree-big-width;
+			right: unset;
+		}
+	}
+
+	@media (min-width: $widescreen-cutoff) {
+		border-left-width: $tree-gutter-side-wide;
+		border-right-width:$tree-gutter-side-wide; 
+	}
+
+	&_name {
+		background: $bg-rgb;
+		font-size: 2rem;
+		font-weight: bold;
+		left: $tree-small-width;
+		right: 0;
+		line-height: $tree-small-height;
+		padding-left: 1em;
+		position: absolute;
+
+		@media (min-width: $mobile-cuttoff) {
+			padding-left: 0;
+			text-align: center;		
+			line-height: 1;
+			left: 0;
+			top: -2em;
+		}
+
 	}
 
 	&_bark {
@@ -81,15 +111,45 @@ body {
 }
 
 #content_container {
-	margin-left: calc((2 * $tree-gutter-side) + $tree-width);
-	background: $bg-rgb;
 	overflow: hidden;
+
+	&:before {
+		content: '';
+		display: block;
+		background: $bg-rgb;
+		position: fixed; 
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: $tree-small-height;
+		z-index: 0;
+	}
+
+	@media (min-width: $mobile-cuttoff) {
+		background: $bg-rgb;
+		margin-left: calc((2 * $tree-gutter-side) + $tree-big-width);
+		
+		&:before {
+			display: none;
+		}
+
+	}
+
+	@media (min-width: $widescreen-cutoff) {
+		margin-left: calc((2 * $tree-gutter-side-wide) + $tree-big-width);
+	}
 }
 
 #content {
-	max-width: 40em;
-	padding: calc($tree-gutter-vert + 1rem) 0;
+	padding: $tree-small-height 0.5rem $tree-small-height $tree-small-width;
 	line-height: 1.35;
+	position: relative;
+	z-index: 1;
+
+	@media (min-width: $mobile-cuttoff) {
+		max-width: 40em;
+		padding: calc($tree-gutter-vert - 1em) 1em calc($tree-gutter-vert - 1em) 0;
+	}
 
 	img {
 		max-width: 100%;

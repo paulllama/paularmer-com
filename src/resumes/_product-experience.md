@@ -1,6 +1,6 @@
 ### Product Lead / Sr. SWE *@ Autodesk, July 2019 - Oct 2022*
-- Led cross-functional teams, including members across the globe, in delivering multiple projects from ideation through deployment, demonstrating strong project management and collaboration skills.
-- Established and scaled internationalization processes, tools, and documentation, ensuring seamless localization for global products and showcasing my ability to improve processes and manage detailed documentation.
+- Led cross-functional project, including members from teams across the globe, in delivering multiple projects from ideation through deployment and maintainence.
+- Established and scaled internationalization processes, tools, and documentation, ensuring seamless localization for global my division's features.
 - Developed and conducted technical interview training sessions with an emphasis on empathy and rigorous assessment, enhancing recruitment and evaluation capabilities.
 - Presented product updates and process innovations at division-wide meetings, driving alignment and transparency across stakeholders and showcasing my communication and stakeholder management skills.
 - Provided comprehensive feedback during biannual reviews, fostering a culture of continuous improvement and professional growth.
