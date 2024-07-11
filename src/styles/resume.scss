@@ -79,6 +79,10 @@ p {
     margin-bottom: 0;
 }
 
+p, li {
+    line-height: 1.35;
+}
+
 a {
     color: $color-accent;
     text-decoration: none;
