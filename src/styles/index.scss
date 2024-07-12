@@ -128,7 +128,8 @@ body {
 	@media (min-width: $mobile-cuttoff) {
 		background: $bg-rgb;
 		margin-left: calc((2 * $tree-gutter-side) + $tree-big-width);
-		
+		position: relative;
+
 		&:before {
 			display: none;
 		}
