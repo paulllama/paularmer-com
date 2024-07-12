@@ -113,6 +113,7 @@ body {
   #content_container {
     background: #e5ded9;
     margin-left: calc(6rem + 38.0714285714vh);
+    position: relative;
   }
   #content_container:before {
     display: none;
