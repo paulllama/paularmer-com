@@ -4,7 +4,7 @@ importMd:
     education=resumes/_education.md
 ---
 
-# Technical Product Manager
+# Product Manager Experience
 
 *Download my [🖨️ printer-friendly resume](/resume/product.html).*
 

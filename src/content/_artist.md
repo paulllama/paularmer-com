@@ -1,4 +1,14 @@
-# Artist 
+# Artwork
+
+### Wooden Wallets, *laser-cut wood*
+![Wave Wallet](/media/art/wave-wallet.jpg =49%x49%)
+![Poppy Wallet](/media/art/poppy-wallet.jpg =49%x49%)
+
+### Game Tokens, *laser-cut acrylic + acrylic paint*
+![Mimic Tokens](/media/art/mimic-tokens.gif) 
+
+### Leaf Mask, *laser-cut felt*
+![Leaf Mask](/media/art/leaf-mask.jpg)
 
 ### Oil Still Life, *oil on canvas*
 ![Oil Still Life](media/art/oil-still-life.jpg)
