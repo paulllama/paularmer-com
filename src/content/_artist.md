@@ -7,6 +7,9 @@
 ### Game Tokens, *laser-cut acrylic + acrylic paint*
 ![Mimic Tokens](/media/art/mimic-tokens.gif) 
 
+### Seedling Sticks, *laser-cut wood*
+![Seedling Sticks](/media/art/seedling-sticks.jpg)
+
 ### Leaf Mask, *laser-cut felt*
 ![Leaf Mask](/media/art/leaf-mask.jpg)
 
