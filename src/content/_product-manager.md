@@ -6,6 +6,6 @@ importMd:
 
 # Product Manager Experience
 
-*Download my [🖨️ printer-friendly resume](/resume/product.html).*
+*Download my [🖨️ printer-friendly resume](/media/resume/product.pdf).*
 
 {{jobExperience}}

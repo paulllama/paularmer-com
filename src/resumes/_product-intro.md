@@ -1,1 +1,3 @@
-Following my tenure at Autodesk, I took a deliberate break to travel and explore new professional avenues. During this time, I pursued a variety of courses including art classes to deepen my proficiency in creative expression. Now, I'm eager to leverage my renewed creativity in my next role as a Product Manager. I hope to bring my empathetic organizational style and my holistic problem-solving to elevate your company.
+Following my time at Autodesk, I took a deliberate break to travel and explore artistic pursuits. Now, refreshed by art courses
+and engaging with community artists, I'm eager to apply my renewed creativity, technical background and empathetic problem-
+solving style towards a Technical Product Manager role.
