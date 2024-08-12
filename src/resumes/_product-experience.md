@@ -11,7 +11,7 @@
 - Wrote on-boarding guidelines for junior engineers, facilitating a quicker integration for new employees into the code base and company culture.
 - Coordinated with product managers to analyze reports from support teams across the globe to learn the pain points of our customers and develop product designs as we expanded to new regions.
 
-### UI/UX DESIGNER & ENGINEER, *@ Study.com, July 2014 - Nov 2017
+### UI/UX DESIGNER & ENGINEER, *@ Study.com, July 2014 - Nov 2017*
 - Collaborated daily with product owners and back-end engineers on a Scrum/Agile team to deliver web-based educational tools and lessons to students K-12.
 - Regularly reviewed analytics data with our business intelligence team throughout the product development process to ensure my designs and features would be impactful in the app.
 - Defined thoughtful front-end coding standards by gathering feedback from other engineers and working with product managers to ensure we were streamlining the development processes, not just adding more requirements.
