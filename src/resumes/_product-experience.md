@@ -1,11 +1,11 @@
 ## PROFESSIONAL EXPERIENCE
 ### PROJECT LEAD / SENIOR I18N ENGINEER
 #### Autodesk, July 2019 - Oct 2022
-- Directed multiple projects on my cross-functional team to successfully deliver features from ideation through deployment and testing, as well as created plans for ongoing maintenance.
-- Proactively identify, assess, and mitigate project risks, by planning out multiple sprints worth of work at a time and communicating adjustment to project delivery estimates.
+- Directed multiple projects on my cross-functional team to successfully deliver features and internal tools from ideation through deployment and testing, as well as created plans for ongoing maintenance.
+- Proactively identify, assess, and mitigate project risks by planning out a roadmap of multiple sprints worth of work at a time and communicating adjustment to project delivery estimates.
 - Started and scaled my division's integration with an internal Continuous Localization service, which provided automatic and updating translations to production-released code within 1 hour. 
 - Represented the i18n team by presenting product delivery updates and process innovations at division-wide meetings, educating stakeholders about our progress and encouraging a culture of idea-sharing.
-- Provided technical analysis to help marketing research understand user needs and technical feasibility of expanding into new locales.
+- Provided technical analysis to help marketing research confidently understand user needs and technical feasibility of untapped locales.
 
 ### PRODUCT ENGINEER
 #### Booking.com, Dec 2017 - June 2019
