@@ -1,7 +1,7 @@
 ---
 importMd: 
     intro=content/_intro.md,
-    product=content/_product-manager.md,
+    professional=content/_product-manager.md,
     artist=content/_artist.md,
     gamer=content/_gamer.md,
     software=content/_software-engineer.md,
@@ -26,7 +26,7 @@ importMd:
     <div id="content_container">
         <div id="content">
             {{intro}}
-            {{product}}
+            {{professional}}
             {{artist}}
             {{gamer}}
         </div>

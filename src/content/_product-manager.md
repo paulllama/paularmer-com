@@ -4,8 +4,11 @@ importMd:
     education=resumes/_education.md
 ---
 
-# Product Manager Experience
+# Project Management / Software Engineering Professional Experience
 
-*Download my [🖨️ printer-friendly resume](/media/resume/product.pdf).*
+*Download my upload-ready resumes:*
+ - [Technical Product Manager / Engineer Project Lead](/resume/product.md).
+ - [Front-end Engineer / UI Designer](/resume/software.md).
 
 {{jobExperience}}
+{{education}}

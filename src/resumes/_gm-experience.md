@@ -1,4 +1,0 @@
-### TTRPG Game Master
-- Led multiple year-long campaigns, crafting story-lines and adapting game play mechanics to provide consistent challenges and fun for my players.
-- Fostered a collaborative and inclusive gaming environment with safety features like X-card and Lines/Veils, to encourage vulnerability and expressive role play.
-- Designed custom game print outs to reduce the amount of paper to print out or to have fun props on the table. I've run Dungeons and Dragons, Blades in the Dark, Powered by the Apocalypse games (Monster of the Week, Dungeonworld), The Deep Forest, Fiasco, and more!

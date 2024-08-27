@@ -1,10 +1,14 @@
 ---
-iconUrl: program_manager-1.png
-title: Software Engineer
-importMd: jobExperience=resumes/_job-experience.md, education=resumes/_education.md
+importMd: 
+    jobExperience=resumes/_software-experience.md, 
+    education=resumes/_education.md
 ---
 
-<label>Download my [printer-friendly resume](/resume/software.html).</label>
+# Project Management / Software Engineering Professional Experience
+
+*Download my upload-ready resumes:*
+ - [Technical Product Manager / Engineer Project Lead](/resume/product.md).
+ - [Front-end Engineer / UI Designer](/resume/software.md).
 
 {{jobExperience}}
 {{education}}

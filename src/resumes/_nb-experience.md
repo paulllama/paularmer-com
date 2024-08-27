@@ -1,2 +1,0 @@
-### Noisebridge Volunteer Member
-*NoiseBridge is a community hackerspace, focused on providing a space and training for technical and artistic projects. I contribute to this "egalitarian do-ocracy", by volunteering time training others on safely using the laser cutter*

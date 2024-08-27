@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="84mm"
+   height="100mm"
+   viewBox="0 0 84 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.1 (91b66b0783, 2023-11-16)"
+   sodipodi:docname="truchet-spikey.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.44913879"
+     inkscape:cx="527.67653"
+     inkscape:cy="-43.416424"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Shapes"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="C"
+       style="font-variation-settings:'wdth' 99.8, 'wght' 700;display:inline;fill:#000000;fill-opacity:1;stroke-width:2;stroke-linecap:square;stroke-dashoffset:134.173;paint-order:markers fill stroke"
+       d="M 41.56956,0 20.78478,12.000302 31.17691,30.000236 H 10.39213 L 20.78426,48.000171 H 0 V 72.000257 L 20.78478,84.000041 62.35433,12.000301 Z M 62.35485,48.000171 72.74698,66.000106 H 51.9622 L 62.35433,84.000041 83.1386,72.000257 V 48.000171 Z"
+       inkscape:label="C" />
+    <path
+       d="M 62.35382,12.000301 51.96169,30.000235 41.56904,11.999784 31.17691,29.999719 20.78478,12.000301 3e-6,24.000085 V 48.000171 H 20.78478 L 10.39213,66.000623 H 31.1764 L 20.78478,84.000041 41.56904,96.000342 62.35382,84.000041 51.96169,66.000106 H 72.74647 L 62.35434,48.000171 H 83.1386 V 24.000085 Z"
+       style="font-variation-settings:'wdth' 99.8, 'wght' 700;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-dashoffset:134.173;paint-order:markers fill stroke"
+       id="B"
+       inkscape:label="B" />
+    <path
+       id="A"
+       style="font-variation-settings:'wdth' 99.8, 'wght' 700;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-dashoffset:134.173;paint-order:markers fill stroke"
+       d="M 41.56904,0 20.78478,12.000301 31.17691,29.999719 41.56904,11.999784 51.96169,30.000235 62.35382,12.000301 Z M 3e-6,48.000171 V 72.000257 L 20.78478,84.000041 31.17639,66.000623 H 10.39213 L 20.78478,48.000171 Z m 62.354337,0 10.39213,17.999935 H 51.96169 L 62.35382,84.000041 83.1386,72.000257 V 48.000171 Z"
+       inkscape:label="A" />
+  </g>
+</svg>

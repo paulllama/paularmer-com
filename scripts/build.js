@@ -17,7 +17,7 @@ try {
     })
 
     copyFileToBuild('CNAME')
-    copyFileToBuild('scripts.js')
+    copyDirToBuild('js')
     copyDirToBuild('media')
 } catch (e) {
     console.error('\nERROR BUILDING\n')

@@ -1,17 +1,24 @@
-### SR. SOFTWARE ENGINEER / PROJECT LEAD *@ Autodesk, Jul 2019 - Oct 2022*
-- Led multiple projects on my cross-functional team; developing implementation plans and stories for fellow engineers, communicating status updates every sprint, and working with the marketing, sales, and support teams for product delivery and maintenance.
-- Established and scaled internationalization processes, flexible developer tools, and documentation - ensuring compliance with legal requirements and seamless localization for my division's features.
-- Developed and conducted technical interviews with an emphasis on empathy for all-involved; simplifying the recruitment process without sacrificing the ability to fully assess a candidate's fit for the role.
-- Presented delivery updates and process innovations for at division-wide meetings, encouraging a culture of idea sharing while demonstrating my team's continual commitment to the product vision.
-- Wrote and participated in conducting customer interviews to gather qualitative data for new feature development.
+## PROFESSIONAL EXPERIENCE
+### PROJECT LEAD / SENIOR I18N ENGINEER
+#### Autodesk, July 2019 - Oct 2022
+- Directed multiple projects on my cross-functional team to successfully deliver features from ideation through deployment and testing, as well as created plans for ongoing maintenance.
+- Proactively identify, assess, and mitigate project risks, by planning out multiple sprints worth of work at a time and communicating adjustment to project delivery estimates.
+- Started and scaled my division's integration with an internal Continuous Localization service, which provided automatic and updating translations to production-released code within 1 hour. 
+- Represented the i18n team by presenting product delivery updates and process innovations at division-wide meetings, educating stakeholders about our progress and encouraging a culture of idea-sharing.
+- Provided technical analysis to help marketing research understand user needs and technical feasibility of expanding into new locales.
 
-### PRODUCT ENGINEER *@ Booking.com, Dec 2017 - Jun 2019*
-- Designed and implemented features for a highly modular drag-and-drop UI that catered to a wide variety of tourism activity providers world-wide.
-- Developed a "branching" technical interview question that gave interviewers a single problem that was adjustable on the fly to challenge candidates in ways that would lead to good hiring signals.
-- Wrote on-boarding guidelines for junior engineers, facilitating a quicker integration for new employees into the code base and company culture.
-- Coordinated with product managers to analyze reports from support teams across the globe to learn the pain points of our customers and develop product designs as we expanded to new regions.
+### PRODUCT ENGINEER
+#### Booking.com, Dec 2017 - June 2019
+- Designed new features for a highly modular UI that catered to a wide variety of tourism activity providers around the globe.
+- Developed and conducted technical interviews with an emphasis on empathy for all-involved, simplifying the recruitment process without sacrificing assessment ability.
+- Built-out an engineering onboarding guide, that would reduce the time it took for junior engineers to write code for production from one month to two weeks.
+- Collaborated globally to gather product requirements and deliver developer support as our product expanded to new regions.
 
-### UI/UX DESIGNER & ENGINEER, *@ Study.com, July 2014 - Nov 2017*
-- Collaborated daily with product owners and back-end engineers on a Scrum/Agile team to deliver web-based educational tools and lessons to students K-12.
-- Regularly reviewed analytics data with our business intelligence team throughout the product development process to ensure my designs and features would be impactful in the app.
-- Defined thoughtful front-end coding standards by gathering feedback from other engineers and working with product managers to ensure we were streamlining the development processes, not just adding more requirements.
+### UI ENGINEER / DESIGNER
+#### Study.com, July 2014 - Nov 2017
+- Collaborated closely with product owners and backend engineers to design and implement UI/UX for new features.
+- Consulted analytics data at every step of the product process to ensure app development would be impactful.
+- Defined frontend coding standards and gathered feedback to optimize development processes and product quality.
+
+### EXPERIENCED TECHNOLOGIES
+Fluent, Javascript, Node.js, React, Redux, AngularJS, HTML/CSS, Django, Webpack, AWS, S3, MongoDB, MySQL, Mode, Tableau, Jenkins, Jira, Confluence, Google Sheets/Microsoft Excel, Photoshop, Illustrator, Figma, InDesign

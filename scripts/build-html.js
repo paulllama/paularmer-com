@@ -2,14 +2,11 @@ const showdown  = require('showdown')
 const fs = require('fs')
 const { BUILD_DIR, SRC_DIR } = require('./build.config')
 
-const WEBSITE_404_BUILD_PATH = `${BUILD_DIR}/404.html`
 const RESUME_BUILD_PATH = `${BUILD_DIR}/resume`
 
 const TEMPLATES_DIR = `${SRC_DIR}/templates`
 const BASE_TEMPLATE_PATH = `${TEMPLATES_DIR}/base.html`
-const RESUME_TEMPLATE_PATH = `${TEMPLATES_DIR}/resume.html`
 const WEBSITE_CONTENT_DIR = `${SRC_DIR}/content`
-const WEBSITE_404_HTML_PATH = `${TEMPLATES_DIR}/404.html`
 const RESUMES_SRC_DIR = `${SRC_DIR}/resumes`
 
 const WATCHABLE_DIRS = [
@@ -39,74 +36,85 @@ const buildHtml = (options) => {
         emoji: true,
     })
 
-    const renderHtml = (template, data) => {
-        let renderedHtml = template
+    const writeFile = (buildPath, contents) => {
+        logMsg(`📝 ${buildPath}`)
+        fs.writeFileSync(buildPath, contents)
+    }
 
-        for (const key in data) {
-            const value = data[key]
-            if (value) {
-                renderedHtml = renderedHtml.replace(`{{${key}}}`, value)
+    const renderToHtml = (markdown) => {
+        const body =  mdConverter.makeHtml(markdown)
+        const meta = mdConverter.getMetadata() || {}
+        return { body, meta }
+    }
+    const renderToMd = (markdown) => {
+        if (markdown.indexOf('---') > -1) {
+            mdConverter.makeHtml(markdown)
+            return {
+                body: markdown.split('---')[2].trim(),
+                meta: mdConverter.getMetadata(),
             }
         }
 
-        return renderedHtml
+        return {
+            body: markdown.toString(),
+            meta: {},
+        }        
     }
-
-    const renderAndWritePage = (buildPath, contents, template) => {
-        logMsg(`writing ${buildPath}`)
-        const html = renderHtml(template, { 
-            htmlRenderDate: new Date(),
-            contents,
-         })
-        fs.writeFileSync(buildPath, html)
-    }
-
-    const buildMdFileToHtml = (mdPath, logIndent = '') => {
-        logMsg(`${logIndent}building '${mdPath}'`)
+    const renderMdFile = (render, mdPath, logIndent = '') => {
+        logMsg(`${logIndent}🏗️ ${mdPath}`)
         const markdown = fs.readFileSync(mdPath).toString()
-        let body = mdConverter.makeHtml(markdown)
-        const { importMd } = mdConverter.getMetadata() || {} // must run after .makeHtml()
+        const { body, meta } = render(markdown)
+        const { importMd } = meta
     
         if (importMd) {
             const cleanImportMd = importMd.replaceAll(' ', '')
             const importPairs = cleanImportMd.indexOf(',') > -1 
                 ? cleanImportMd.split(',') 
                 : [cleanImportMd]
-            body = importPairs.reduce((html, pair) => {
+            return importPairs.reduce((html, pair) => {
                 if (!pair) {
                     return html
                 }
                 const [key, path] = pair.split('=')
-                const importHtml = buildMdFileToHtml(`${SRC_DIR}/${path}`, `  ${logIndent}`)
+                const importHtml = renderMdFile(render, `${SRC_DIR}/${path}`, `  ${logIndent}`)
                 return html.replace(`{{${key}}}`, importHtml)
             }, body)
         }
 
         return body
     }
+    
+    const renderMdFileToMd = (mdPath) => renderMdFile(renderToMd, mdPath)
+    renderMdFileToMd.fileType = 'md'
 
-    const buildMdFilesInDir = (srcDir, buildDir, template) => {
+    const renderMdFileToHtml = (mdPath) => renderMdFileToHtml.template
+        .replace('{{contents}}', renderMdFile(renderToHtml, mdPath))
+        .replace('{{htmlRenderDate}}', new Date())
+    renderMdFileToHtml.fileType = 'html'
+    renderMdFileToHtml.template = fs.readFileSync(BASE_TEMPLATE_PATH).toString()
+
+    const buildMdFilesInDir = (srcDir, buildDir, buildFn) => {
         const allFileNames = fs.readdirSync(srcDir)
         if (!allFileNames || allFileNames.length < 1) {
             return failBuild(`error reading files from ${srcDir}`)
         }
+
         allFileNames.filter(fn => !fn.startsWith('_')).forEach(fileName => {
             const fileId = fileName.replace('.md', '')
             const fileSrc = `${srcDir}/${fileName}`
-            const fileDest = `${buildDir}/${fileId}.html`
-            const fileHtml = buildMdFileToHtml(fileSrc, '\t')
-            renderAndWritePage(fileDest, fileHtml, template)
+            const fileDest = `${buildDir}/${fileId}.${buildFn.fileType}`
+
+            const fileContents = buildFn(fileSrc)
+            writeFile(fileDest, fileContents)
         })
     }
 
     logMsg('WEBSITE')
-    const baseTemplate = fs.readFileSync(BASE_TEMPLATE_PATH).toString()
-    buildMdFilesInDir(WEBSITE_CONTENT_DIR, BUILD_DIR, baseTemplate)
-    renderAndWritePage(WEBSITE_404_BUILD_PATH, WEBSITE_404_HTML_PATH, baseTemplate)
+    buildMdFilesInDir(WEBSITE_CONTENT_DIR, BUILD_DIR, renderMdFileToHtml)
 
     logMsg('\nRESUMES')
-    const resumeTemplate = fs.readFileSync(RESUME_TEMPLATE_PATH).toString()
-    buildMdFilesInDir(RESUMES_SRC_DIR, RESUME_BUILD_PATH, resumeTemplate)
+    buildMdFilesInDir(RESUMES_SRC_DIR, RESUME_BUILD_PATH, renderMdFileToHtml)
+    buildMdFilesInDir(RESUMES_SRC_DIR, RESUME_BUILD_PATH, renderMdFileToMd)
 }
 
 module.exports = {

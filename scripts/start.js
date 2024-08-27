@@ -27,6 +27,10 @@ const assetTypes = [
     regex: /.*\.pdf$/, 
     type: 'x-pdf',
   },
+  {
+    regex: /.*\.md$/, 
+    type: 'text/md',
+  }
 ]
 
 const server = http.createServer((req, res) => {
