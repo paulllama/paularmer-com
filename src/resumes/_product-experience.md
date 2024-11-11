@@ -4,7 +4,7 @@
 - Directed multiple projects on my cross-functional team to successfully deliver features and internal tools from ideation through deployment and testing, as well as created plans for ongoing maintenance.
 - Proactively identify, assess, and mitigate project risks by planning out a roadmap of multiple sprints worth of work at a time and communicating adjustment to project delivery estimates.
 - Started and scaled my division's integration with an internal Continuous Localization service, which provided automatic and updating translations to production-released code within 1 hour. 
-- Represented the i18n team by presenting product delivery updates and process innovations at division-wide meetings, educating stakeholders about our progress and encouraging a culture of idea-sharing.
+- Regularly represented the i18n team by presenting product delivery updates and process innovations at division-wide meetings, educating stakeholders about our progress and encouraging a culture of idea-sharing.
 - Provided technical analysis to help marketing research confidently understand user needs and technical feasibility of untapped locales.
 
 ### PRODUCT ENGINEER
@@ -21,4 +21,7 @@
 - Defined frontend coding standards and gathered feedback to optimize development processes and product quality.
 
 ### EXPERIENCED TECHNOLOGIES
-Fluent, Javascript, Node.js, React, Redux, AngularJS, HTML/CSS, Django, Webpack, AWS, S3, MongoDB, MySQL, Mode, Tableau, Jenkins, Jira, Confluence, Google Sheets/Microsoft Excel, Photoshop, Illustrator, Figma, InDesign
+#### General Applications
+Jira, Confluence, Google Drive/Docs, MS Office, Photoshop, Illustrator, Figma, InDesign, Inkscape
+#### Software Engineering
+Fluent, Javascript, Node.js, React, Redux, AngularJS, HTML/CSS, Django, Webpack, AWS, S3, MongoDB, MySQL, Mode, Tableau, Jenkins

@@ -1,1 +1,1 @@
-Following my time at Autodesk, I took a deliberate break to travel and explore artistic pursuits. Now, refreshed by art courses and engaging with community artists, I'm eager to apply my renewed creativity, technical background and empathetic problem-solving style to manifest your company's product ideas.
+Following my time at Autodesk, I took a deliberate break to travel and explore artistic pursuits. Now, refreshed by art courses and engaging with my community, I'm eager to apply my renewed creativity, technical background and empathetic problem-solving to your company.
