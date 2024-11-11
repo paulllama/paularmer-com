@@ -41,7 +41,6 @@ Javascript, Typescript, Node.js, React, Redux, Vue, AngularJS, HTML, CSS, SASS, 
 ### NOISEBRIDGE VOLUNTEER
 #### Jan 2024 - Present
 NoiseBridge is a community hackerspace in SF, providing a space for technical, artistic, and educational projects. In addition to using the space for creating laser-cut woodwork, I contribute to this "egalitarian do-ocracy", by teaching skills to other members.
-
 ## Education
 Cal Poly, San Luis Obispo
 Software Engineer, B.S.

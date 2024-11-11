@@ -1,19 +1,18 @@
 # PAUL ARMER (he/him/they/them)
-## Technical Product Manager & Engineering Project Lead
+## Technical Analyst / UI Designer / Software Engineer
 > armerpaul@gmail.com
 > paularmer.website
 > github.com/paulllama
 > San Francisco, CA
 
-Following my time at Autodesk, I took a deliberate break to travel and explore artistic pursuits. Now, refreshed by art courses and engaging with community artists, I'm eager to apply my renewed creativity, technical background and empathetic problem-solving style to manifest your company's product ideas.
-
+Following my time at Autodesk, I took a deliberate break to travel and explore artistic pursuits. Now, refreshed by art courses and engaging with my community, I'm eager to apply my renewed creativity, technical background and empathetic problem-solving to your company.
 ## PROFESSIONAL EXPERIENCE
 ### PROJECT LEAD / SENIOR I18N ENGINEER
 #### Autodesk, July 2019 - Oct 2022
 - Directed multiple projects on my cross-functional team to successfully deliver features and internal tools from ideation through deployment and testing, as well as created plans for ongoing maintenance.
 - Proactively identify, assess, and mitigate project risks by planning out a roadmap of multiple sprints worth of work at a time and communicating adjustment to project delivery estimates.
 - Started and scaled my division's integration with an internal Continuous Localization service, which provided automatic and updating translations to production-released code within 1 hour. 
-- Represented the i18n team by presenting product delivery updates and process innovations at division-wide meetings, educating stakeholders about our progress and encouraging a culture of idea-sharing.
+- Regularly represented the i18n team by presenting product delivery updates and process innovations at division-wide meetings, educating stakeholders about our progress and encouraging a culture of idea-sharing.
 - Provided technical analysis to help marketing research confidently understand user needs and technical feasibility of untapped locales.
 
 ### PRODUCT ENGINEER
@@ -30,7 +29,10 @@ Following my time at Autodesk, I took a deliberate break to travel and explore a
 - Defined frontend coding standards and gathered feedback to optimize development processes and product quality.
 
 ### EXPERIENCED TECHNOLOGIES
-Fluent, Javascript, Node.js, React, Redux, AngularJS, HTML/CSS, Django, Webpack, AWS, S3, MongoDB, MySQL, Mode, Tableau, Jenkins, Jira, Confluence, Google Sheets/Microsoft Excel, Photoshop, Illustrator, Figma, InDesign
+#### General Applications
+Jira, Confluence, Google Drive/Docs, MS Office, Photoshop, Illustrator, Figma, InDesign, Inkscape
+#### Software Engineering
+Fluent, Javascript, Node.js, React, Redux, AngularJS, HTML/CSS, Django, Webpack, AWS, S3, MongoDB, MySQL, Mode, Tableau, Jenkins
 
 ## OTHER EXPERIENCE
 ### TTRPG GAME MASTER
@@ -41,7 +43,6 @@ Fluent, Javascript, Node.js, React, Redux, AngularJS, HTML/CSS, Django, Webpack,
 ### NOISEBRIDGE VOLUNTEER
 #### Jan 2024 - Present
 NoiseBridge is a community hackerspace in SF, providing a space for technical, artistic, and educational projects. In addition to using the space for creating laser-cut woodwork, I contribute to this "egalitarian do-ocracy", by teaching skills to other members.
-
 ## Education
 Cal Poly, San Luis Obispo
 Software Engineer, B.S.
