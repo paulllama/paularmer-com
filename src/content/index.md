@@ -6,7 +6,7 @@ importMd:
     gamer=content/_gamer.md,
 ---
 
-<section class="hero">
+<section>
     {{intro}}
 </section>
 <section>
