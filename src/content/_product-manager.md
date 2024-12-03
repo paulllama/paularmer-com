@@ -4,7 +4,7 @@ importMd:
     education=resumes/_education.md
 ---
 
-# Project Management / Software Engineering Professional Experience
+## Project Management / Software Engineering Professional Experience
 
 *Download my upload-ready resumes:*
  - [Technical Product Manager / Engineer Project Lead](/resume/product.md).

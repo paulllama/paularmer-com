@@ -1,4 +1,4 @@
-# Artwork
+## Artwork
 
 ### Wooden Wallets, *laser-cut wood*
 ![Wave Wallet](/media/art/wave-wallet.jpg =49%x49%)

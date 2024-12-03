@@ -1,17 +1,12 @@
 @use "sass:math";
+@use "sass:color";
 @import 'shared';
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-@font-face {
-	font-family: "NationalPark";
-	src:
-		url("/media/nationalpark-variable.woff2") format("woff2"),
-		url("/media/nationalpark-variable.woff") format("woff"),
-		url("/media/nationalpark-variable.ttf") format("ttf");
-} 
-
-$mobile-cuttoff: 600px;
-$widescreen-cutoff: 1000px;
+$max-section-width: 42rem;
+$section-side-margin: 1rem;
+$mobile-cutoff: $max-section-width + 2 * $section-side-margin;
 
 $tree-ratio: math.div(123, 210);
 $tree-small-height: 5rem;
@@ -23,133 +18,132 @@ $tree-gutter-side-wide: 6rem;
 $tree-gutter-vert: math.div((101vh - $tree-big-height), 2);
 
 html {
-	background: $bg-rgb;
+	background: $color-bg;
 }
 
 body {
-	background: linear-gradient(180deg, 
-		($bg-rgb 0), 
-		($sun-start-rgb 10%), 
-		($sun-mid-rgb 40%),
-		($sun-end-rgb 70%),
-		($dark-rgb 100%),
-	);
-	color: $dark-rgb;
-	font-family: 'NationalPark', sans-serif;
+	background: 
+		radial-gradient(
+			circle 100vw at 0 0, 
+			$color-bridge, 
+			$color-pride 75%,
+			transparent, 
+		),
+		radial-gradient(
+			circle 75vw at 100vw 50vh, 
+			$color-fog,
+			$color-fog 60%, 
+			transparent,
+		),
+		radial-gradient(
+			circle 100vw at 0 100vh, 
+			$color-sunshine, 
+			$color-sunshine 70%, 
+			transparent, 
+		),
+		radial-gradient(
+			circle 100vw at bottom right, 
+			$color-bridge, 
+			$color-pride 75%,
+			transparent, 
+		),
+		radial-gradient(
+			circle 75vw at bottom left, 
+			$color-pride,
+			$color-fog 20%,
+			$color-fog 80%, 
+			transparent, 
+		),
+		radial-gradient(
+			circle 100vw at center right, 
+			$color-sunshine, 
+			$color-sunshine 70%, 
+			transparent, 
+		);
+	color: $color-text;
+	font-family: "IBM Plex Mono", monospace;
+	font-size: 16px;
+	min-height: 100vh;
 }
 
-#tree {
-	position: fixed;
-	fill: transparent;
-	top: 0;
-	left: 0;
-	z-index: 2;
+h1, h2, h3 {
+	font-family: "Playfair Display", serif;
+	font-weight: bold;
+	margin: 0;
+}
 
-	height: $tree-small-height;
-	width: 100%;
+h1 {
+	font-size: 5rem;
+	font-style: italic;
+}
+h2 {
+	font-size: 3rem;
+	font-style: italic;
+}
+h3 {
+	font-size: 2rem;
+}
+a {
+	color: $color-text;
+	text-decoration: underline;
+	font-weight: bold;
+	transition: opacity 250ms;
 
-	svg {
-		position: absolute;
-		width: $tree-small-width;
+	&:hover, &:focus {
+		opacity: 0.6;
+	}
+}
+
+nav {
+	padding: 0.5rem 1rem;
+	display: flex;
+	justify-content: space-between;
+
+	@media (min-width: $mobile-cutoff) {
+		position: fixed;
 		top: 0;
 		left: 0;
+		right: 0;
 	}
-
-	@media (min-width: $mobile-cuttoff) {
-		height: $tree-big-height;
-		width: $tree-big-width;
-		border-style: solid;
-		border-color: $bg-rgb;
-		border-width: $tree-gutter-vert $tree-gutter-side $tree-gutter-vert; 
 	
-		svg {
-			width: $tree-big-width;
-			right: unset;
+	.logo {
+		img {
+			height: 3rem;
 		}
 	}
 
-	@media (min-width: $widescreen-cutoff) {
-		border-left-width: $tree-gutter-side-wide;
-		border-right-width:$tree-gutter-side-wide; 
-	}
+	.links {
+		display: flex;
 
-	&_name {
-		background: $bg-rgb;
-		font-size: 2rem;
-		font-weight: bold;
-		left: $tree-small-width;
-		right: 0;
-		line-height: $tree-small-height;
-		padding-left: 1em;
-		position: absolute;
-
-		@media (min-width: $mobile-cuttoff) {
-			padding-left: 0;
-			text-align: center;		
-			line-height: 1;
-			left: 0;
-			top: -2em;
+		@media (min-width: $mobile-cutoff) {
+			flex-direction: column;
 		}
 
-	}
-
-	&_bark {
-		fill: $bark-rgb;
-	}
-
-	&_greenery {
-		fill: $leaf-rgb;
-	}
-
-	&_outline {
-		fill: $dark-rgb;
-	}
-
-	&_negative {
-		fill: $bg-rgb;
+		a {
+			text-align: right;
+			margin-top: 0.5em;
+			margin-left: 1em;
+		}
 	}
 }
 
-#content_container {
-	overflow: hidden;
-
-	&:before {
-		content: '';
-		display: block;
-		background: $bg-rgb;
-		position: fixed; 
-		left: 0;
-		right: 0;
-		bottom: 0;
-		top: $tree-small-height;
-		z-index: 0;
+section {
+	border-top: 1px solid;
+	margin: 2rem $section-side-margin;
+	padding-top: 2rem;
+	max-width: $max-section-width;
+	
+	@media (min-width: $mobile-cutoff) {
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 5rem;
+		margin-top: 5rem;
 	}
 
-	@media (min-width: $mobile-cuttoff) {
-		background: $bg-rgb;
-		margin-left: calc((2 * $tree-gutter-side) + $tree-big-width);
-		position: relative;
-
-		&:before {
-			display: none;
-		}
-
-	}
-
-	@media (min-width: $widescreen-cutoff) {
-		margin-left: calc((2 * $tree-gutter-side-wide) + $tree-big-width);
-	}
-}
-
-#content {
-	padding: $tree-small-height 0.5rem $tree-small-height $tree-small-width;
-	line-height: 1.35;
-	position: relative;
-	z-index: 1;
-
-	@media (min-width: $mobile-cuttoff) {
-		max-width: 40em;
-		padding: calc($tree-gutter-vert - 1em) 1em calc($tree-gutter-vert - 1em) 0;
+	&.hero {
+		padding-top: 10rem;
+		border-top: none;
+		margin-top: 0;
 	}
 
 	img {
@@ -162,5 +156,13 @@ body {
 		li {
 			padding-bottom: 0.5em;
 		}
+	}
+}
+
+footer {
+	padding-bottom: 5rem;
+
+	section {
+
 	}
 }
