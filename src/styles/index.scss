@@ -81,6 +81,7 @@ h2 {
 	font-style: italic;
 }
 h3 {
+	margin-top: 1.5em;
 	font-size: 2rem;
 }
 a {
@@ -142,33 +143,41 @@ section {
 	}
 
 	&:first-of-type {
-		padding-top: 4rem;
+		padding-top: 0rem;
 		border-top: none;
 		margin-top: 0;
 
 		@media (min-width: $mobile-cutoff) {
-			padding-top: 10rem;
+			padding-top: 6rem;
 		}
 	}
 
 	img {
-		max-width: 100%;
+		max-width: 20rem;
+		max-height: 50vh;
+		margin: 0 0.5rem 0.5rem 0;
+		display: inline-block;
 	}
 
 	ul {
 		padding-left: 1.5rem;
 
-		li {
+		li {	
 			padding-bottom: 0.5em;
 		}
 	}
 }
 
 footer {
-	padding-bottom: 5rem;
+	padding: 5rem $section-side-margin;
+	background: $color-text;
 
 	.links {
+		margin: auto;
+		max-width: $max-section-width;
+
 		a {
+			color: $color-bg;
 			margin-right: 2em;
 		}
 	}
