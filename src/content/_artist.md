@@ -3,9 +3,10 @@
 ### Machine Cut Works
 *wallets, game tokens, greeting cards, and more*
 
-![Seedling Sticks](/media/art/seedling-sticks.jpg)
-![Poppy Wallet](/media/art/poppy-wallet.jpg)
+![Crow Tokens](/media/art/crow-tokens.jpg)
+![Birthday Card](/media/art/candice-card.jpg)
 ![Mimic Tokens](/media/art/mimic-tokens.gif) 
+![Poppy Wallet](/media/art/poppy-wallet.jpg)
 
 [View more of my machine cut art](/portfolio.html#machine)
 
@@ -13,8 +14,10 @@
 *oil / acrylic usually on canvas*
 
 ![Oil Still Life](media/art/oil-still-life.jpg)
+![SF Parrot](media/art/sf-parrot.jpg)
 ![Pop Poppies](media/art/pop-poppies.jpg)
 ![Party Parrots](media/art/parrot-party.jpg)
+
 
 [View more of my hand-painted art](/portfolio.html#hand)
 
