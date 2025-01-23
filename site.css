@@ -49,6 +49,11 @@ h3 {
   font-size: 2rem;
 }
 
+h4 {
+  margin-top: 1.25em;
+  margin-bottom: 0.25em;
+}
+
 a {
   color: #19181a;
   text-decoration: underline;
@@ -114,6 +119,16 @@ section:first-of-type {
     padding-top: 6rem;
   }
 }
+section p {
+  display: flex;
+  justify-content: space-between;
+}
+section p > img {
+  width: 49%;
+}
+section p > img:first-child:last-child {
+  width: 100%;
+}
 section blockquote {
   width: 100%;
   padding: 0;
@@ -152,4 +167,4 @@ footer .links a {
   margin-right: 2em;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=site.css.map */
