@@ -19,5 +19,3 @@ importMd:
     {{gamer}}
 </section>
 
-<script src="scripts.js" defer="defer"></script>
-

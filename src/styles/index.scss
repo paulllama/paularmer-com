@@ -152,11 +152,23 @@ section {
 		}
 	}
 
-	img {
-		max-width: 20rem;
-		max-height: 50vh;
-		margin: 0 0.5rem 0.5rem 0;
-		display: inline-block;
+	blockquote {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+
+		@media (min-width: $mobile-cutoff) {
+			width: calc(100vw - 2 * $section-side-margin);
+			margin-left: calc(($max-section-width / 2) - 50vw);
+			padding: 0 $section-side-margin;
+		}
+
+		img {
+			max-width: 30%;
+			margin: 0 0.5rem;
+			display: inline-block;
+		}
 	}
 
 	ul {
