@@ -84,6 +84,10 @@ h3 {
 	margin-top: 1.5em;
 	font-size: 2rem;
 }
+h4 {
+	margin-top: 1.25em;
+	margin-bottom: 0.25em;
+}
 a {
 	color: $color-text;
 	text-decoration: underline;
@@ -149,6 +153,19 @@ section {
 
 		@media (min-width: $mobile-cutoff) {
 			padding-top: 6rem;
+		}
+	}
+
+	p {
+		display: flex;
+		justify-content: space-between;
+
+		& > img {
+			width: 49%;
+
+			&:first-child:last-child {
+				width: 100%;
+			}
 		}
 	}
 
