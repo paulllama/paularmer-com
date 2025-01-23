@@ -114,10 +114,22 @@ section:first-of-type {
     padding-top: 6rem;
   }
 }
-section img {
-  max-width: 20rem;
-  max-height: 50vh;
-  margin: 0 0.5rem 0.5rem 0;
+section blockquote {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+@media (min-width: 44rem) {
+  section blockquote {
+    width: calc(100vw - 2rem);
+    margin-left: calc(21rem - 50vw);
+    padding: 0 1rem;
+  }
+}
+section blockquote img {
+  max-width: 30%;
+  margin: 0 0.5rem;
   display: inline-block;
 }
 section ul {
