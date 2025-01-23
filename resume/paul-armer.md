@@ -49,6 +49,7 @@ I took a break from my software career in 2023 and took many art classes to expl
 - Pottery (Wheel & Hand-built)
 - Laser-cut Wood & Acrylic
 *Checkout my website for examples of my work!*
+
 ## Education
 Cal Poly, San Luis Obispo
 Software Engineer, B.S.
