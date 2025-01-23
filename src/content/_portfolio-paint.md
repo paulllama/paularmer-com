@@ -1,4 +1,4 @@
-## Painted / Hand-drawn Works
+## Painting
 
 ### Still Life #2
 *Oil Paint on Canvas*

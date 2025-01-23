@@ -1,21 +1,26 @@
 ---
 importMd: 
-    hand=content/_art-by-hand.md,
-    machine=content/_art-by-machine.md,
-    web=content/_art-for-web.md,
+    header=content/_portfolio-header.md,
+    clay=content/_portfolio-clay.md,
+    paint=content/_portfolio-paint.md,
+    machine=content/_portfolio-machine.md,
+    digital=content/_portfolio-digital.md,
 ---
 
 <section>
-    <h1>Selected Artwork</h1>
+    {{header}}
+</section>
+<section id="clay">
+    {{clay}}
+</section>
+<section id="paint">
+    {{paint}}
 </section>
 <section id="machine">
     {{machine}}
 </section>
-<section id="web">
-    {{web}}
-</section>
-<section id="hand">
-    {{hand}}
+<section id="digital">
+    {{digital}}
 </section>
 
 
