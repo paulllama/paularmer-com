@@ -1,9 +1,14 @@
 ## OTHER EXPERIENCE
 ### TTRPG GAME MASTER
 #### 2015 - Present
-- Led multiple campaigns, crafting story-lines and adapting game play mechanics to provide consistent challenges and fun for my players.
-- Fostered a collaborative, inclusive gaming environment with safety tools like X-card and Lines/Veils, to encourage vulnerability and expressive games.
+- Designed immersive campaigns as a Game Master, ensuring a balance of challenge, creativity, and fun to cater to diverse participant preferences.
+- Exhibited strong problem-solving skills by collaboratively improvising solutions to unanticipated scenarios in real-time without hogging the spotlight or stalling gameplay.
+- Actively listened to fellow players, contributing thoughtful decisions that aligned with group goals and enhanced collaborative storytelling.
 
-### NOISEBRIDGE VOLUNTEER
-#### Jan 2024 - Present
-NoiseBridge is a community hackerspace in SF, providing a space for technical, artistic, and educational projects. In addition to using the space for creating laser-cut woodwork, I contribute to this "egalitarian do-ocracy", by teaching skills to other members.
+### MULTI-MEDIA ARTIST
+#### Jan 2023 - Present
+I took a break from my software career in 2023 and took many art classes to explore my passion for art and design.
+- Oil & Acrylic Painting
+- Pottery (Wheel & Hand-built)
+- Laser-cut Wood & Acrylic
+*Checkout my website for examples of my work!*

@@ -21,6 +21,3 @@ To deploy to Github Pages, make sure everything is pushed to `main`. Then you ca
 ```
 $ npm run deploy
 ```
-
-## Credits
-Icons by (Alex Meub)[https://win98icons.alexmeub.com/]
