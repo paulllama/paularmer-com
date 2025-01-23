@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="250"
-   height="300"
-   viewBox="0 0 83.333335 100"
+   width="350"
+   height="350"
+   viewBox="0 0 116.66667 116.66667"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      inkscape:zoom="0.36029412"
-     inkscape:cx="94.367347"
-     inkscape:cy="856.2449"
+     inkscape:cx="91.591836"
+     inkscape:cy="553.71428"
      inkscape:current-layer="layer5" />
   <defs
      id="defs1" />
@@ -36,6 +36,6 @@
     <path
        id="path64"
        style="stroke-width:0.999995;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
-       d="M 0,0 V 74.999851 100 H 17.139797 V 93.749962 74.999851 6.2500376 0 Z M 28.566327,0 V 5.7424856 55.047106 L 77.620072,5.7424856 83.333337,0 Z m 54.76701,16.240467 -5.713265,5.742485 -49.053745,49.304624 h 49.053745 5.713265 z m -54.76701,66.53208 V 94.257517 100 h 54.76701 V 82.772547 h -4.97888 z" />
+       d="M 16.666666,8.333335 V 83.333186 108.33333 H 33.806463 V 102.0833 83.333186 14.583373 8.333335 Z m 28.566327,0 v 5.742486 49.30462 L 94.286738,14.075821 100,8.333335 Z M 100,24.573802 94.286738,30.316287 45.232993,79.620911 H 94.286738 100 Z m -54.767007,66.53208 v 11.484968 5.74248 H 100 V 91.105882 h -4.978877 z" />
   </g>
 </svg>
