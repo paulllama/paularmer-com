@@ -8,15 +8,6 @@ $max-section-width: 42rem;
 $section-side-margin: 1rem;
 $mobile-cutoff: $max-section-width + 2 * $section-side-margin;
 
-$tree-ratio: math.div(123, 210);
-$tree-small-height: 5rem;
-$tree-small-width: $tree-small-height * $tree-ratio;
-$tree-big-height: 65vh;
-$tree-big-width: $tree-big-height * $tree-ratio;
-$tree-gutter-side: 3rem;
-$tree-gutter-side-wide: 6rem;
-$tree-gutter-vert: math.div((101vh - $tree-big-height), 2);
-
 html {
 	background: $color-bg;
 }
