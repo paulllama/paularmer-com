@@ -25,5 +25,5 @@
 > ![Oil Still Life](media/art/oil-still-life.jpg)
 > ![SF Parrot](media/art/sf-parrot.jpg)
 
-[View more of my hand-painted art](/portfolio.html#hand)
+[View more of my hand-painted art](/portfolio.html#paint)
 
