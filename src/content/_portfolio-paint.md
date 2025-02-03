@@ -3,7 +3,7 @@
 ### Untitled Goose Painting
 *Acrylic on Canvas, 2025*
 
-![Oil Still Life](media/art/oil-still-life.jpg)
+![Oil Still Life](media/art/untitled-goose-painting.jpg)
 
 ### Still Life #2
 *Oil on Canvas, 2023*
